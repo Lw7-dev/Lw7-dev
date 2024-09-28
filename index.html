@@ -1,505 +1,242 @@
-<html><head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Getaway Shootout Unblocked - ubg235 Poki</title>
-	<script src="https://www.googletagmanager.com/gtag/js?id=G-E7D3EVY6HR"></script><script>
-	window.config = {
-		loader: 'unity-2020',
-		debug: false,
-		maxRatio: 24 / 9,
-		minRatio: 9 / 24,
-
-		title: 'Getaway Shootout',
-		thumbnail: 'patch/png/null.png?https:\/\/img.poki.com\/934bde36-a4a1-43d0-8b35-30f15feddbb4.png',
-		numScreenshots:  4 ,
-
-		unityVersion: '2020.3.43f1',
-		unityWebglBuildUrl: '',
-
-		fileSize:  18 ,
-		cachedDecompressedFileSizes: {
-			'1214fbea69c5893898f0c094bddb36cf.js':  10913 ,
-			'57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js':  455369 ,
-			'd6ece658d7fb23fdee2f8d277596a675.wasm':  11052334 ,
-			'e2bd1bcb1a8f61af3745639e6e51fd11.data':  6569519 ,
-		},
-		"metadata": {"poki_template_version":1,"background_color":"#231F20","code_filename":"d6ece658d7fb23fdee2f8d277596a675.wasm","company_name":"New Eich Games","data_filename":"e2bd1bcb1a8f61af3745639e6e51fd11.data","development_player":"false","framework_filename":"57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js","height":"600","loader_filename":"1214fbea69c5893898f0c094bddb36cf.js","product_name":"Getaway Shootout","product_version":"1.2","splash_screen_style":"Dark","total_memory":"268435456","unity_version":"2020.3.43f1","use_data_caching":"false","use_threads":"false","use_wasm":"true","use_webgl_1_0":"true","use_webgl_2_0":"true","width":"960"}
-	};
-	</script>
-<!-- will be copied to the resulting head //-->
-<style type="text/css"></style><style type="text/css">* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #002B50;
-    font-family: Torus, Arial, Helvetica, sans-serif;
-    color: #fff;
-}
-
-#game-container {
-    position: absolute !important;
-    left: 50%;
-    top: 50%;
-    display: none;
-}
-
-#game,
-#game canvas {
-    width: 100%;
-    height: 100%;
-}
-
-#loader {
-    width: 100%;
-    height: 100%;
-}
-
-/**
-   * Slideshow
-   */
-
-#slideshow {
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    display: flex;
-    user-select: none;
-}
-
-@font-face {
-    font-family: Torus;
-    src:
-        url('patch/fonts/torus-bold-webfont.woff2') format('woff2'),
-        url('patch/fonts/torus-bold-webfont.woff') format('woff');
-    font-style: bold;
-    font-weight: 700;
-}
-
-/**
-   * Slideshow - Top section
-   */
-#progress-spinner{
-    margin-left: 0;
-    margin-top: 0;
-    left: 0px;
-    display:none;
-    transform: translate(100%, -50%);
-    width:10vh;
-}
-#progress-spinner >div{
-    width:2vh;
-    height:2vh;
-}
-#thumbnail {
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.4);
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.24); */
-    border-radius: 16.667%;
-}
-
-#slideshow-top {
-    display: flex;
-    margin: 2.5vh 0;
-}
-
-#slideshow-top-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-#game-title, #progress-comment {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    font-size:2vh;
-}
-
-#progress-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    transition: 0.2s ease-out all;
-}
-
-#progress-container.done {
-    opacity: 0;
-}
-
-#progress-bar {
-    background: #fff;
-    width: 100%;
-    overflow: hidden;
-}
-
-#progress-fill {
-    background: #3CF7DC;
-    height: 100%;
-    transition: 0.2s ease-out all;
-    animation-name: fillColor;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-}
-
-@keyframes fillColor {
-    0% {
-        background-color: #3CF7DC;
-    }
-
-    25% {
-        background-color: #FFA9BE;
-    }
-
-    50% {
-        background-color: #FFDC00;
-    }
-
-    75% {
-        background-color: #E0AEF5;
-    }
-
-    100% {
-        background-color: #3CF7DC;
-    }
-}
-
-@media (orientation: portrait) {
-    #thumbnail {
-        margin-right: 2.4vh;
-    }
-
-    #game-title h1 {
-        font-size: 2vh;
-    }
-
-    #slideshow-top {
-        width: 70vw;
-    }
-
-    #progress-bar {
-        height: 1vh;
-        border-radius: 0.5vh;
-    }
-
-    #progress-fill {
-        border-radius: 0.5vh;
-    }
-
-    #thumbnail {
-        width: 5vh;
-        height: 5vh;
-    }
-
-    #progress-amount {
-        font-size: 2vh;
-        margin-left: 1.5vh;
-        width: 3vh;
-    }
-}
-
-@media (orientation: landscape) {
-    #thumbnail {
-        margin-right: 3vh;
-    }
-
-    #game-title h1 {
-        font-size: 3vh;
-    }
-
-    #slideshow-top {
-        width: 50vw;
-    }
-
-    #progress-bar {
-        height: 1.2vh;
-        border-radius: 0.6vh;
-    }
-
-    #progress-fill {
-        border-radius: 0.6vh;
-    }
-
-    #thumbnail {
-        width: 7.5vh;
-        height: 7.5vh;
-    }
-
-    #progress-amount {
-        font-size: 2.5vh;
-        margin-left: 1.875vh;
-        width: 3.75vh;
-    }
-}
-
-/**
-   * Slideshow - Images section
-   */
-
-#slideshow-images {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-#slideshow-images .image {
-    position: absolute;
-    box-shadow: 0 2.4vh 3.6vh rgba(0, 0, 0, 0.4);
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
-    perspective: 1000px;
-    left: 0;
-    overflow: hidden;
-    /* border: 1vh solid; */
-}
-
-#slideshow-images .image img {
-    width: 100%;
-    height: 100%;
-}
-
-#slideshow-images .image:nth-of-type(1n) {
-    border-color: #3BE8B0;
-}
-
-#slideshow-images .image:nth-of-type(2n) {
-    border-color: #FF6D92;
-}
-
-#slideshow-images .image:nth-of-type(3n) {
-    border-color: #A177FF;
-}
-
-#slideshow-images .image:nth-of-type(4n) {
-    border-color: #FFD200;
-}
-
-#slideshow-images .left {
-    z-index: 2;
-}
-#slideshow-images .right {
-    z-index: 1;
-}
-
-#slideshow-images .middle {
-    z-index: 3;
-}
-
-#slideshow-images .left img,
-#slideshow-images .right img {
-    transform: scale(1.05);
-}
-
-#slideshow-images .left img,
-#slideshow-images .right img,
-#slideshow-images .fromLeft img,
-#slideshow-images .fromRight img {
-    filter: blur(1vh);
-}
-
-#slideshow-images .inactive {
-    display: none;
-}
-
-#slideshow-images .inactive.fromLeft,
-#slideshow-images .inactive.fromRight {
-    display: block;
-}
-
-/**
-   * Slideshow - Navigation section
-   */
-
-#slideshow-nav {
-    display: flex;
-    justify-content: center;
-    margin: 2.5vh 0;
-}
-
-#slideshow-nav .bullet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#slideshow-nav .bullet:after {
-    content: '';
-    background: #fff;
-    border-radius: 0.4vh;
-    width: 0.8vh;
-    height: 0.8vh;
-}
-
-#slideshow-nav .bullet.active:after {
-    background: #009CFF;
-}
-
-#slideshow-nav .bullet {
-    width: 2.5vh;
-    height: 2.5vh;
-}
-
-#slideshow-nav .bullet:after {
-    border-radius: 50%;
-    width: 50%;
-    height: 50%;
-}
-
-/**
-   * Pop-in animation
-   */
-
-#slideshow-nav,
-#slideshow-images {
-    opacity: 0;
-    transition: 0.4s all ease-out;
-    transform: translateY(2vh);
-    perspective: 1000px;
-    transition-delay: 400ms;
-}
-
-#slideshow-nav {
-    transition-delay: 600ms;
-}
-
-#slideshow.active #slideshow-images,
-#slideshow.active #slideshow-nav {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes bounceInDown {
-
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    }
-
-    0% {
-        transform: translate3d(0, -100vh, 0);
-    }
-
-    40% {
-        transform: translate3d(0, 0.5vh, 0);
-    }
-
-    65% {
-        transform: translate3d(0, -0.2vh, 0);
-    }
-
-    80% {
-        transform: translate3d(0, 0.1vh, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-#slideshow-top {
-    transform: translate3d(0, -20vh, 0);
-    opacity: 0;
-}
-
-#slideshow-top.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    animation-name: bounceInDown;
-    animation-duration: 0.5s;
-}
-
-/**
-   * Loading dots
-   */
-.spinner {
-    position: relative;
-    left: -9999px;
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: .25s;
-    transform:translate(50vw, 50vh) translate(-130%, -130%);
-  }
-
-  .spinner:before, .spinner:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-  }
-  .spinner, .spinner:before, .spinner:after{
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-  }
-
-  .spinner:before {
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: 0s;
-    left:-20px;
-  }
-
-  .spinner:after {
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: .5s;
-    left:20px;
-  }
-
-  @keyframes dot-pulse {
-    0% {
-      box-shadow: 9999px 0 0 -5px #FFF;
-    }
-    30% {
-      box-shadow: 9999px 0 0 2px #FFF;
-    }
-    60%,
-    100% {
-      box-shadow: 9999px 0 0 -5px #FFF;
-    }
-  }
-</style></head>
-<body>
-	<script src="patch/js/poki-master-loader.js"></script><script src="patch/js/poki-sdk.js"></script>
-  <script src="js/analytics_ubg_v1_4.js"></script>
-  <script src="js/ubg235_client_v1_1.js"></script>
-<!-- will be copied to the resulting body //-->
-<!-- will also be copied to the resulting body //-->
-
-
-<script src="https://ubg44.github.io/GetawayShootout/patch/js/poki-unity-2020.js"></script><div id="loader" style="display: none;"><div id="slideshow" class="active"><div id="slideshow-top" class="active"><img id="thumbnail" alt="Getaway Shootout" title="Getaway Shootout" src="patch/png/null.png?https://img.poki.com/934bde36-a4a1-43d0-8b35-30f15feddbb4.png"><div id="slideshow-top-container"><div id="game-title">Getaway Shootout</div><div id="progress-spinner" class="spinner" style="display: flex;"><div class="bounce0"></div><div class="bounce1"></div><div class="bounce2"></div></div><div id="progress-container" class="done"><div id="progress-bar"><div id="progress-fill" style="width: 100%;"></div></div><div id="progress-amount" style="width: 12vh; white-space: nowrap;">100% of 18MB</div></div><div id="progress-comment">Preparing game...</div></div></div><div id="slideshow-images"><div class="image middle" fullimageloaded="true" data-idx="0"><img src="https://ubg44.github.io/GetawayShootout/screenshots/1.jpg"></div><div class="image right" data-idx="1" fullimageloaded="true"><img src="https://ubg44.github.io/GetawayShootout/screenshots/2.jpg"></div><div class="image inactive" data-idx="2"><img src="screenshots/3-small.jpg"></div><div class="image left" data-idx="3"><img src="screenshots/4-small.jpg"></div></div><div id="slideshow-nav"><div class="bullet active" data-idx="0"></div><div class="bullet" data-idx="1"></div><div class="bullet" data-idx="2"></div><div class="bullet" data-idx="3"></div></div></div></div><div id="game-container" style="display: block; width: 808px; height: 825px; margin-left: -404px; margin-top: -412.5px;"><canvas id="game" width="808" height="825" style="cursor: default;"></canvas></div><script src="https://www.ubg235.com/js/ubg235_server_v1_0.js" type="text/javascript" async="true"></script><script src="Build/1214fbea69c5893898f0c094bddb36cf.js"></script><script src="https://www.ubg235.com/logs/?w=1920&amp;h=1080&amp;ua=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F126.0.0.0%20Safari%2F537.36%20OPR%2F112.0.0.0&amp;l=https%3A%2F%2Fubg44.github.io%2FGetawayShootout%2F&amp;p=https://www.ubg235.com/na/" type="text/javascript" async="false"></script><style>
-		#slideshow-images {
-			height: 44.07272727272728vh;
-		}
-		#slideshow-images .image {
-			transition-duration: 0.5s;
-			width: 60vw;
-			height: 44.07272727272728vh;
-		}
-		#slideshow-images .middle {
-			transform: translateX(20vw);
-		}
-		#slideshow-images .left {
-			transform: translateX(-34vw) scale(0.8);
-		}
-		#slideshow-images .right {
-			transform: translateX(74vw) scale(0.8);
-		}
-		#slideshow-images .inactive.fromLeft {
-			transform: translateX(-60vw) scale(0.4);
-		}
-		#slideshow-images .inactive.fromRight {
-			transform: translateX(130vw) scale(0.4);
-		}
-	</style><script src="Build/57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js"></script></body></html>
+<body id="ninja" class="home page-template-default page page-id-8 wp-custom-logo type" aria-hidden="false" style="">
+<div id="page" class="site">
+	<a class="skip-link screen-reader-text" href="#primary">Skip to content</a>
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMGS3Z69" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<main id="primary" class="site-main container ">
+    
+     <aside class="ad"><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4375897457858236" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- Click the Red Button API -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-4375897457858236" data-ad-slot="7347208569" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_1_host" style="border: none; height: 600px; width: 160px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_1" name="aswift_1" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:160px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4375897457858236&amp;output=html&amp;h=600&amp;slotname=7347208569&amp;adk=496917690&amp;adf=3110433513&amp;pi=t.ma~as.7347208569&amp;w=160&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727539595&amp;rafmt=1&amp;format=160x600&amp;url=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1500&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=4&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTEyLjAuNTE5Ny43NCIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3QvQSlCcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTI2LjAuNjQ3OC4yMjYiXSxbIk9wZXJhIEdYIiwiMTEyLjAuNTE5Ny43NCJdXSwwXQ..&amp;dt=1727539595578&amp;bpp=1&amp;bdt=163&amp;idt=68&amp;shv=r20240925&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D3d8ccab96b3b568b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MY2FOFlMyRCav0YS7AEDvuDLZlzUg&amp;gpic=UID%3D00000edb140c9d39%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MapGR1sSTHdc5XzEy9xH9zVlcnYRw&amp;eo_id_str=ID%3D9a73a7bcdfd62f8b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DAA-AfjaCjFqBQGTf0LVAFQSb4Hi3&amp;prev_fmts=0x0&amp;nras=1&amp;correlator=4409036757702&amp;frm=20&amp;pv=1&amp;u_tz=-300&amp;u_his=7&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1879&amp;bih=928&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C95339781%2C31087435%2C95341937&amp;oid=2&amp;pvsid=3779679209792116&amp;tmod=1459683861&amp;uas=0&amp;nvt=3&amp;ref=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1451&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C%2C%2C1920%2C1032%2C1879%2C928&amp;vis=1&amp;rsz=%7C%7CenEr%7C&amp;abl=CS&amp;pfx=0&amp;fu=32896&amp;bc=31&amp;bz=1.02&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;fsb=1&amp;dtd=72" data-google-container-id="a!2" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CIP3rL-C5ogDFVaCjggdH_gTjg" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></aside> 
+        <section id="the-button">
+
+            <div id="fs-controls">
+                <button id="fullscreeniframe" title="View in full screen" class="fullscreen-controls">  
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> 
+        <g> 
+            <g> 
+                <path d="M151.414,0H72.975C32.737,0,0,32.737,0,72.975v78.439c0,11.422,9.26,20.682,20.682,20.682 c11.422,0,20.682-9.26,20.682-20.682V72.975c0-17.43,14.181-31.611,31.611-31.611h78.439c11.422,0,20.682-9.26,20.682-20.682 C172.096,9.26,162.836,0,151.414,0z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M439.025,0h-78.44c-11.422,0-20.682,9.26-20.682,20.682c0,11.422,9.259,20.682,20.682,20.682h78.44 c17.43,0,31.611,14.181,31.611,31.611v78.439c0,11.422,9.259,20.682,20.682,20.682c11.423,0,20.682-9.26,20.682-20.682V72.975 C512,32.737,479.264,0,439.025,0z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M491.318,339.903c-11.423,0-20.682,9.259-20.682,20.682v78.44c0,17.43-14.181,31.611-31.611,31.611h-78.44 c-11.423,0-20.682,9.259-20.682,20.682c0,11.423,9.259,20.682,20.682,20.682h78.44C479.264,512,512,479.264,512,439.025v-78.44 C512,349.162,502.741,339.903,491.318,339.903z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M151.414,470.636H72.975c-17.43,0-31.611-14.181-31.611-31.611v-78.44c0-11.423-9.26-20.682-20.682-20.682 C9.26,339.903,0,349.162,0,360.585v78.44C0,479.264,32.737,512,72.975,512h78.439c11.422,0,20.682-9.259,20.682-20.682 C172.096,479.895,162.836,470.636,151.414,470.636z"></path> 
+            </g> 
+        </g> 
+    </svg> 
+</button>
+
+<button id="reduceiframe" title="exit full screen" class="button fullscreen-controls" onclick="indCloseFS()">  
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"> 
+        <g> 
+            <g> 
+                <path d="M151.414,0c-11.422,0-20.682,9.26-20.682,20.682v78.439c0,17.43-14.181,31.611-31.611,31.611H20.682 C9.26,130.732,0,139.992,0,151.414s9.26,20.682,20.682,20.682h78.439c40.238,0,72.975-32.737,72.975-72.975V20.682 C172.096,9.26,162.836,0,151.414,0z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M491.318,130.732h-78.439c-17.431,0-31.612-14.181-31.612-31.611V20.682C381.267,9.26,372.008,0,360.585,0 s-20.682,9.26-20.682,20.682v78.439c0,40.238,32.738,72.975,72.976,72.975h78.439c11.423,0,20.682-9.26,20.682-20.682 S502.741,130.732,491.318,130.732z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M491.318,339.903h-78.439c-40.239,0-72.976,32.738-72.976,72.976v78.439c0,11.423,9.259,20.682,20.682,20.682 s20.682-9.259,20.682-20.682v-78.439c0-17.431,14.181-31.612,31.612-31.612h78.439c11.423,0,20.682-9.259,20.682-20.682 S502.741,339.903,491.318,339.903z"></path> 
+            </g> 
+        </g> 
+        <g> 
+            <g> 
+                <path d="M99.121,339.903H20.682C9.26,339.903,0,349.162,0,360.585s9.26,20.682,20.682,20.682h78.439 c17.43,0,31.611,14.181,31.611,31.612v78.439c0,11.423,9.26,20.682,20.682,20.682s20.682-9.259,20.682-20.682v-78.439 C172.096,372.639,139.36,339.903,99.121,339.903z"></path> 
+            </g> 
+        </g> 
+    </svg> 
+</button>            </div>
+
+            <div id="favorites-login" class="modal hide" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-header"></div>
+      </div>
+      <div class="modal-body">
+        <p>Please enter your email address to manage your favorites.</p>
+        <form id="emailForm">
+          <div class="email-input input-container">
+            <label for="favoritesEmail" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="favoritesEmail" name="favoritesEmail" required="">
+          </div>
+          <div class="form-check input-container">
+          <label class="switch">
+            <input id="mailing-list" name="mailingList" type="checkbox">
+            <span class="slider"></span>
+          </label>
+          <label for="#mailing-list">Send me email updates about cool new sites!</label>
+          </div>
+          <div id="cancel-favorites" class="mac-button cancel">Cancel</div>
+          <button id="favoritesSignUp" type="submit" class="mac-button ">Continue</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+            <div id="screen" class="screen">
+                <div id="adinplay-container"></div>
+                <div id="screen-content" class="screen-content">
+
+                    <iframe src="https://ubg44.github.io/GetawayShootout/" title="Getaway Shootout" allow="autoplay; encrypted-media; gyroscope; picture-in-picture;"></iframe>                    
+                    
+                </div>
+            </div>
+
+            <section id="fave-settings-screen">
+    <span id="close-favorites">×</span>
+    <h2>Favorites</h2>
+    <span id="favorites-user"></span>
+    <ul id="favorites-list"></ul>
+</section>
+<div id="favorites-settings-bg"></div>
+            <!-- AddToAny BEGIN -->
+<div id="share-icons" class="a2a_kit a2a_kit_size_32 a2a_default_style" style="line-height: 32px;">
+    <span id="close-share">×</span>
+    <h2>Share This Link!</h2>
+    <a class="a2a_dd" href="https://www.addtoany.com/share#url=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1500&amp;title=Bored%3F%20Hit%20the%20button%20-%20Discover%20the%20web!"><span class="a2a_svg a2a_s__default a2a_s_a2a" style="background-color: rgb(1, 102, 255);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M14 7h4v18h-4z"></path><path d="M7 14h18v4H7z"></path></g></svg></span><span class="a2a_label a2a_localize" data-a2a-localize="inner,Share">Share</span></a>
+    <a class="a2a_button_facebook" target="_blank" rel="nofollow noopener" href="/#facebook"><span class="a2a_svg a2a_s__default a2a_s_facebook" style="background-color: rgb(8, 102, 255);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M28 16c0-6.627-5.373-12-12-12S4 9.373 4 16c0 5.628 3.875 10.35 9.101 11.647v-7.98h-2.474V16H13.1v-1.58c0-4.085 1.849-5.978 5.859-5.978.76 0 2.072.15 2.608.298v3.325c-.283-.03-.775-.045-1.386-.045-1.967 0-2.728.745-2.728 2.683V16h3.92l-.673 3.667h-3.247v8.245C23.395 27.195 28 22.135 28 16"></path></svg></span><span class="a2a_label">Facebook</span></a>
+    <a class="a2a_button_email" target="_blank" rel="nofollow noopener" href="/#email"><span class="a2a_svg a2a_s__default a2a_s_email" style="background-color: rgb(136, 137, 144);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M27 21.775v-9.9s-10.01 6.985-10.982 7.348C15.058 18.878 5 11.875 5 11.875v9.9c0 1.375.293 1.65 1.65 1.65h18.7c1.393 0 1.65-.242 1.65-1.65m-.017-11.841c0-1.002-.291-1.359-1.633-1.359H6.65c-1.38 0-1.65.429-1.65 1.43l.016.154s9.939 6.842 11 7.216C17.14 16.941 27 10.005 27 10.005z"></path></svg></span><span class="a2a_label">Email</span></a>
+    <a class="a2a_button_whatsapp" target="_blank" rel="nofollow noopener" href="/#whatsapp"><span class="a2a_svg a2a_s__default a2a_s_whatsapp" style="background-color: rgb(18, 175, 10);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" fill-rule="evenodd" d="M16.21 4.41C9.973 4.41 4.917 9.465 4.917 15.7c0 2.134.592 4.13 1.62 5.832L4.5 27.59l6.25-2.002a11.24 11.24 0 0 0 5.46 1.404c6.234 0 11.29-5.055 11.29-11.29 0-6.237-5.056-11.292-11.29-11.292m0 20.69c-1.91 0-3.69-.57-5.173-1.553l-3.61 1.156 1.173-3.49a9.35 9.35 0 0 1-1.79-5.512c0-5.18 4.217-9.4 9.4-9.4s9.397 4.22 9.397 9.4c0 5.188-4.214 9.4-9.398 9.4zm5.293-6.832c-.284-.155-1.673-.906-1.934-1.012-.265-.106-.455-.16-.658.12s-.78.91-.954 1.096c-.176.186-.345.203-.628.048-.282-.154-1.2-.494-2.264-1.517-.83-.795-1.373-1.76-1.53-2.055s0-.445.15-.584c.134-.124.3-.326.45-.488.15-.163.203-.28.306-.47.104-.19.06-.36-.005-.506-.066-.147-.59-1.587-.81-2.173-.218-.586-.46-.498-.63-.505-.168-.007-.358-.038-.55-.045-.19-.007-.51.054-.78.332-.277.274-1.05.943-1.1 2.362-.055 1.418.926 2.826 1.064 3.023.137.2 1.874 3.272 4.76 4.537 2.888 1.264 2.9.878 3.43.85.53-.027 1.734-.633 2-1.297s.287-1.24.22-1.363c-.07-.123-.26-.203-.54-.357z" clip-rule="evenodd"></path></svg></span><span class="a2a_label">WhatsApp</span></a>
+    <a class="a2a_button_pinterest" target="_blank" rel="nofollow noopener" href="/#pinterest"><span class="a2a_svg a2a_s__default a2a_s_pinterest" style="background-color: rgb(230, 0, 35);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M15.995 4C9.361 4 4 9.37 4 15.995c0 5.084 3.16 9.428 7.622 11.176-.109-.948-.198-2.41.039-3.446.217-.938 1.402-5.963 1.402-5.963s-.356-.72-.356-1.777c0-1.668.968-2.912 2.172-2.912 1.027 0 1.52.77 1.52 1.688 0 1.027-.65 2.567-.996 3.998-.287 1.195.602 2.172 1.777 2.172 2.132 0 3.771-2.25 3.771-5.489 0-2.873-2.063-4.877-5.015-4.877-3.416 0-5.42 2.557-5.42 5.203 0 1.027.395 2.132.888 2.735a.36.36 0 0 1 .08.345c-.09.375-.297 1.195-.336 1.363-.05.217-.178.266-.405.158-1.481-.711-2.409-2.903-2.409-4.66 0-3.781 2.745-7.257 7.928-7.257 4.156 0 7.394 2.962 7.394 6.931 0 4.137-2.606 7.464-6.22 7.464-1.214 0-2.36-.632-2.744-1.383l-.75 2.854c-.267 1.046-.998 2.35-1.491 3.149a12 12 0 0 0 3.554.533C22.629 28 28 22.63 28 16.005 27.99 9.37 22.62 4 15.995 4"></path></svg></span><span class="a2a_label">Pinterest</span></a>
+    <a class="a2a_button_sms" target="_blank" rel="nofollow noopener" href="/#sms"><span class="a2a_svg a2a_s__default a2a_s_sms" style="background-color: rgb(108, 190, 69);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M16 3.543c-7.177 0-13 4.612-13 10.294 0 3.35 2.027 6.33 5.16 8.21 1.71 1.565 1.542 4.08-.827 6.41 2.874 0 7.445-1.698 8.462-4.34H16c7.176 0 13-4.605 13-10.285s-5.824-10.29-13-10.29zM9.045 17.376c-.73 0-1.45-.19-1.81-.388l.294-1.194c.384.2.98.398 1.6.398.66 0 1.01-.275 1.01-.692 0-.398-.302-.625-1.07-.9-1.06-.37-1.753-.957-1.753-1.886 0-1.09.91-1.924 2.415-1.924.72 0 1.25.152 1.63.322l-.322 1.166a3 3 0 0 0-1.336-.303c-.625 0-.93.284-.93.616 0 .41.36.59 1.186.9 1.127.42 1.658 1.01 1.658 1.91.003 1.07-.822 1.98-2.575 1.98zm9.053-.095-.095-2.44a73 73 0 0 1-.057-2.626h-.028a35 35 0 0 1-.71 2.475l-.778 2.49h-1.128l-.682-2.473a30 30 0 0 1-.578-2.493h-.02c-.037.863-.065 1.85-.112 2.645l-.114 2.425H12.46l.407-6.386h1.924l.63 2.13c.2.74.397 1.536.54 2.285h.027a53 53 0 0 1 .607-2.293l.683-2.12h1.886l.35 6.386H18.1zm4.09.1c-.73 0-1.45-.19-1.81-.39l.293-1.194c.39.2.99.398 1.605.398.663 0 1.014-.275 1.014-.692 0-.396-.305-.623-1.07-.9-1.064-.37-1.755-.955-1.755-1.884 0-1.09.91-1.924 2.416-1.924.72 0 1.25.153 1.63.323l-.322 1.166a3.04 3.04 0 0 0-1.337-.303c-.625 0-.93.284-.93.616 0 .408.36.588 1.186.9 1.127.42 1.658 1.006 1.658 1.906.002 1.07-.823 1.98-2.576 1.98z"></path></svg></span><span class="a2a_label">Message</span></a>
+    <a class="a2a_button_telegram" target="_blank" rel="nofollow noopener" href="/#telegram"><span class="a2a_svg a2a_s__default a2a_s_telegram" style="background-color: rgb(44, 165, 224);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M25.515 6.896 6.027 14.41c-1.33.534-1.322 1.276-.243 1.606l5 1.56 1.72 5.66c.226.625.115.873.77.873.506 0 .73-.235 1.012-.51l2.43-2.363 5.056 3.734c.93.514 1.602.25 1.834-.863l3.32-15.638c.338-1.363-.52-1.98-1.41-1.577z"></path></svg></span><span class="a2a_label">Telegram</span></a>
+    <a class="a2a_button_facebook_messenger" target="_blank" rel="nofollow noopener" href="/#facebook_messenger"><span class="a2a_svg a2a_s__default a2a_s_facebook_messenger" style="background-color: rgb(0, 132, 255);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M16 5C9.986 5 5.11 9.56 5.11 15.182c0 3.2 1.58 6.054 4.046 7.92V27l3.716-2.06c.99.276 2.04.425 3.128.425 6.014 0 10.89-4.56 10.89-10.183S22.013 5 16 5m1.147 13.655L14.33 15.73l-5.423 3 5.946-6.31 2.816 2.925 5.42-3-5.946 6.31z"></path></svg></span><span class="a2a_label">Messenger</span></a>
+    <a class="a2a_button_reddit" target="_blank" rel="nofollow noopener" href="/#reddit"><span class="a2a_svg a2a_s__default a2a_s_reddit" style="background-color: rgb(255, 69, 0);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M28.543 15.774a2.953 2.953 0 0 0-2.951-2.949 2.88 2.88 0 0 0-1.9.713 14.1 14.1 0 0 0-6.85-2.044l1.38-4.349 3.768.884a2.452 2.452 0 1 0 .24-1.176l-4.274-1a.6.6 0 0 0-.709.4l-1.659 5.224a14.3 14.3 0 0 0-7.316 2.029 2.9 2.9 0 0 0-1.872-.681 2.942 2.942 0 0 0-1.618 5.4 5 5 0 0 0-.062.765c0 4.158 5.037 7.541 11.229 7.541s11.22-3.383 11.22-7.541a5 5 0 0 0-.053-.706 2.96 2.96 0 0 0 1.427-2.51m-18.008 1.88a1.753 1.753 0 0 1 1.73-1.74 1.73 1.73 0 0 1 1.709 1.74 1.71 1.71 0 0 1-1.709 1.711 1.733 1.733 0 0 1-1.73-1.711m9.565 4.968a5.57 5.57 0 0 1-4.081 1.272h-.032a5.58 5.58 0 0 1-4.087-1.272.6.6 0 0 1 .844-.854 4.5 4.5 0 0 0 3.238.927h.032a4.5 4.5 0 0 0 3.237-.927.6.6 0 1 1 .844.854zm-.331-3.256a1.726 1.726 0 1 1 1.709-1.712 1.717 1.717 0 0 1-1.712 1.712z"></path></svg></span><span class="a2a_label">Reddit</span></a>
+    <a class="a2a_button_google_gmail" target="_blank" rel="nofollow noopener" href="/#google_gmail"><span class="a2a_svg a2a_s__default a2a_s_gmail" style="background-color: rgb(234, 67, 53);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M6.5 24.504H10v-8.5l-5-3.75v10.75c0 .83.673 1.5 1.5 1.5m15.5 0h3.5a1.5 1.5 0 0 0 1.5-1.5v-10.75l-5 3.75" opacity=".9"></path><path fill="#fff" d="M22 9.504v6.5l5-3.75v-2c0-1.855-2.117-2.912-3.6-1.8"></path><path fill="#fff" d="M10 16.004v-6.5l6 4.5 6-4.5v6.5l-6 4.5" opacity=".9"></path><path fill="#fff" d="M5 10.254v2l5 3.75v-6.5l-1.4-1.05C7.115 7.342 5 8.4 5 10.254"></path></svg></span><span class="a2a_label">Gmail</span></a>
+    <a class="a2a_button_threads" target="_blank" rel="nofollow noopener" href="/#threads"><span class="a2a_svg a2a_s__default a2a_s_threads" style="background-color: rgb(26, 26, 26);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M22.067 15.123a8 8 0 0 0-.315-.142c-.185-3.414-2.05-5.368-5.182-5.388h-.042c-1.873 0-3.431.8-4.39 2.255l1.722 1.181c.716-1.087 1.84-1.318 2.669-1.318h.028c1.031.006 1.81.306 2.313.89.367.426.612 1.015.733 1.757a13.2 13.2 0 0 0-2.96-.143c-2.977.172-4.892 1.909-4.763 4.322.065 1.224.675 2.277 1.717 2.964.88.582 2.015.866 3.194.802 1.558-.085 2.78-.68 3.632-1.766.647-.825 1.056-1.894 1.237-3.241.742.448 1.292 1.037 1.596 1.745.516 1.205.546 3.184-1.068 4.797-1.415 1.414-3.116 2.025-5.686 2.044-2.851-.02-5.008-.935-6.41-2.717-1.313-1.67-1.991-4.08-2.016-7.165.025-3.085.703-5.496 2.016-7.165 1.402-1.782 3.558-2.696 6.41-2.718 2.872.022 5.065.94 6.521 2.731.714.879 1.252 1.983 1.607 3.27l2.018-.538c-.43-1.585-1.107-2.95-2.027-4.083C22.755 5.2 20.025 4.024 16.509 4h-.014c-3.51.024-6.209 1.205-8.022 3.51C6.86 9.56 6.028 12.414 6 15.992v.016c.028 3.578.86 6.431 2.473 8.482 1.813 2.305 4.512 3.486 8.022 3.51h.014c3.12-.022 5.319-.838 7.13-2.649 2.371-2.368 2.3-5.336 1.518-7.158-.56-1.307-1.629-2.369-3.09-3.07m-5.387 5.065c-1.305.074-2.66-.512-2.727-1.766-.05-.93.662-1.969 2.807-2.092q.369-.022.724-.021c.78 0 1.508.075 2.171.22-.247 3.088-1.697 3.59-2.975 3.66Z"></path></svg></span><span class="a2a_label">Threads</span></a>
+    <a class="a2a_button_wechat" target="_blank" rel="nofollow noopener" href="/#wechat"><span class="a2a_svg a2a_s__default a2a_s_wechat" style="background-color: rgb(123, 179, 46);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M20.674 12.458c-2.228.116-4.165.792-5.738 2.318-1.59 1.542-2.315 3.43-2.116 5.772-.87-.108-1.664-.227-2.462-.294-.276-.023-.602.01-.836.14-.774.438-1.517.932-2.397 1.482.16-.73.266-1.37.45-1.985.137-.45.074-.7-.342-.994-2.673-1.89-3.803-4.714-2.958-7.624.78-2.69 2.697-4.323 5.302-5.173 3.555-1.16 7.55.022 9.712 2.845a6.63 6.63 0 0 1 1.38 3.516zm-10.253-.906c.025-.532-.44-1.01-.984-1.027a.997.997 0 0 0-1.038.964.984.984 0 0 0 .977 1.02 1.017 1.017 0 0 0 1.05-.96zm5.35-1.028c-.55.01-1.01.478-1 1.012.01.554.466.987 1.03.98a.98.98 0 0 0 .99-1.01.99.99 0 0 0-1.02-.982"></path><path d="M25.68 26.347c-.705-.314-1.352-.785-2.042-.857-.686-.072-1.408.324-2.126.398-2.187.224-4.147-.386-5.762-1.88-3.073-2.842-2.634-7.2.92-9.53 3.16-2.07 7.795-1.38 10.022 1.493 1.944 2.51 1.716 5.837-.658 7.94-.687.61-.934 1.11-.493 1.917.086.148.095.336.14.523zm-8.03-7.775c.448 0 .818-.35.835-.795a.835.835 0 0 0-.83-.865.845.845 0 0 0-.84.86c.016.442.388.8.834.8zm5.176-1.658a.83.83 0 0 0-.824.794c-.02.47.347.858.813.86.45 0 .807-.34.823-.79a.825.825 0 0 0-.812-.864"></path></g></svg></span><span class="a2a_label">WeChat</span></a>
+    <a class="a2a_button_yahoo_mail" target="_blank" rel="nofollow noopener" href="/#yahoo_mail"><span class="a2a_svg a2a_s__default a2a_s_yahoo" style="background-color: rgb(64, 0, 144);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M21.495 6.097c1.09.31 2.213.28 3.304 0l-7.42 12.09v9.91a4.4 4.4 0 0 0-1.37-.22c-.47 0-.937.065-1.404.22v-9.91L7.19 6.097c1.09.28 2.213.31 3.304 0l5.516 8.788 5.483-8.787z"></path></svg></span><span class="a2a_label">Yahoo Mail</span></a>
+    <a class="a2a_button_x" target="_blank" rel="nofollow noopener" href="/#x"><span class="a2a_svg a2a_s__default a2a_s_x" style="background-color: rgb(26, 26, 26);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M21.751 7h3.067l-6.7 7.658L26 25.078h-6.172l-4.833-6.32-5.531 6.32h-3.07l7.167-8.19L6 7h6.328l4.37 5.777L21.75 7Zm-1.076 16.242h1.7L11.404 8.74H9.58l11.094 14.503Z"></path></svg></span><span class="a2a_label">X</span></a>
+    <a class="a2a_button_snapchat" target="_blank" rel="nofollow noopener" href="/#snapchat"><span class="a2a_svg a2a_s__default a2a_s_snapchat" style="background-color: rgb(26, 26, 26);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M26.177 20.978c-2.867-.473-4.157-3.414-4.21-3.54l-.01-.02q-.23-.467-.1-.772c.164-.39.774-.583 1.177-.71.113-.037.22-.07.306-.105.715-.28 1.073-.625 1.066-1.03-.006-.312-.252-.593-.642-.732a1.2 1.2 0 0 0-.44-.084 1 1 0 0 0-.405.083c-.34.16-.65.246-.91.258a.8.8 0 0 1-.357-.087l.027-.45.005-.062c.09-1.432.203-3.215-.266-4.264C20.03 6.34 17.073 6.1 16.2 6.1h-.052l-.363.003c-.87 0-3.818.243-5.208 3.36-.47 1.05-.357 2.833-.268 4.264l.03.513a.83.83 0 0 1-.41.09q-.415 0-.97-.26a.8.8 0 0 0-.335-.067c-.43 0-.946.282-1.026.704-.06.305.077.748 1.054 1.134.087.036.193.07.305.105.403.128 1.012.322 1.18.71q.126.306-.103.773l-.01.022c-.054.125-1.344 3.068-4.21 3.54a.437.437 0 0 0-.366.455.6.6 0 0 0 .048.196c.216.504 1.123.87 2.775 1.13.055.075.113.34.148.5.036.16.07.32.12.494.05.17.18.374.514.374.133 0 .292-.03.475-.067.275-.053.652-.127 1.124-.127.26 0 .532.022.805.067.532.09.985.41 1.51.78.75.53 1.6 1.132 2.894 1.132q.052.001.105-.005c.04.002.095.004.153.004 1.29 0 2.142-.6 2.892-1.132.526-.37.978-.69 1.51-.78q.412-.068.807-.068c.45 0 .805.056 1.123.12q.301.056.476.057h.024c.246 0 .42-.13.488-.365.05-.17.086-.327.12-.49.037-.16.094-.422.15-.496 1.65-.256 2.56-.624 2.773-1.125a.6.6 0 0 0 .047-.196.433.433 0 0 0-.363-.458z"></path></svg></span><span class="a2a_label">Snapchat</span></a>
+    <a class="a2a_button_outlook_com" target="_blank" rel="nofollow noopener" href="/#outlook_com"><span class="a2a_svg a2a_s__default a2a_s_outlook_com" style="background-color: rgb(0, 114, 198);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M19.271 8.574v5.144l1.796 1.13a.44.44 0 0 0 .198 0L29 9.635c0-.617-.573-1.06-.9-1.06z"></path><path fill="#fff" d="m19.271 15.636 1.642 1.126c.23.17.507 0 .507 0-.277.17 7.58-5.048 7.58-5.048v9.45c0 1.03-.658 1.46-1.4 1.46h-8.329zm-8.488-2.371q-.839 0-1.333.787c-.334.524-.496 1.22-.496 2.086 0 .875.162 1.568.496 2.076.322.51.757.767 1.29.767.552 0 .985-.249 1.31-.743q.48-.744.481-2.064c0-.92-.159-1.63-.469-2.14q-.467-.77-1.281-.77h.002Z"></path><path fill="#fff" d="M3 5.965v20.118l15.303 3.206V3zM13.241 19.42q-.971 1.276-2.53 1.278-1.52 0-2.479-1.238-.954-1.235-.954-3.225c0-1.399.32-2.532.97-3.395.648-.866 1.51-1.298 2.576-1.298q1.516-.002 2.45 1.238.935 1.242.935 3.269c.004 1.4-.322 2.52-.967 3.37Z"></path></svg></span><span class="a2a_label">Outlook.com</span></a>
+    <a class="a2a_button_copy_link" target="_blank" rel="nofollow noopener" href="/#copy_link"><span class="a2a_svg a2a_s__default a2a_s_link" style="background-color: rgb(136, 137, 144);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#fff" d="M7.591 21.177q0-.54.377-.917l2.804-2.804a1.24 1.24 0 0 1 .913-.378q.565 0 .97.43-.038.041-.255.25-.215.21-.29.29a3 3 0 0 0-.2.256 1.1 1.1 0 0 0-.177.344 1.4 1.4 0 0 0-.046.37q0 .54.377.918a1.25 1.25 0 0 0 .918.377q.19.001.373-.047.189-.056.345-.175.135-.09.256-.2.15-.14.29-.29c.14-.142.223-.23.25-.254q.445.42.445.984 0 .539-.377.916l-2.778 2.79a1.24 1.24 0 0 1-.917.364q-.54-.001-.917-.35l-1.982-1.97a1.22 1.22 0 0 1-.378-.9zm9.477-9.504q0-.54.377-.917l2.777-2.79a1.24 1.24 0 0 1 .913-.378q.525-.001.917.364l1.984 1.968q.38.378.38.903 0 .54-.38.917l-2.802 2.804a1.24 1.24 0 0 1-.916.364q-.565 0-.97-.418.038-.04.255-.25a8 8 0 0 0 .29-.29q.108-.12.2-.255.121-.156.176-.344.048-.181.047-.37 0-.538-.377-.914a1.25 1.25 0 0 0-.917-.377q-.205 0-.37.046-.172.046-.346.175a4 4 0 0 0-.256.2q-.08.076-.29.29l-.25.258q-.441-.417-.442-.983zM5.003 21.177q0 1.617 1.146 2.736l1.982 1.968c.745.75 1.658 1.12 2.736 1.12q1.63 0 2.75-1.143l2.777-2.79c.75-.747 1.12-1.66 1.12-2.737q.002-1.66-1.183-2.818l1.186-1.185q1.16 1.185 2.805 1.186 1.617 0 2.75-1.13l2.803-2.81q1.127-1.132 1.128-2.748 0-1.62-1.146-2.738L23.875 6.12Q22.758 4.999 21.139 5q-1.63 0-2.75 1.146l-2.777 2.79c-.75.747-1.12 1.66-1.12 2.737q-.002 1.658 1.183 2.817l-1.186 1.186q-1.16-1.186-2.805-1.186-1.617 0-2.75 1.132L6.13 18.426Q5 19.559 5 21.176z"></path></svg></span><span class="a2a_label">Copy Link</span></a>
+    <a class="a2a_button_aol_mail" target="_blank" rel="nofollow noopener" href="/#aol_mail"><span class="a2a_svg a2a_s__default a2a_s_aol" style="background-color: rgb(26, 26, 26);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M17.334 13.26c-2.315 0-4.067 1.8-4.067 4.027 0 2.35 1.824 4.03 4.067 4.03s4.062-1.68 4.062-4.03c0-2.228-1.744-4.027-4.062-4.027m0 2.127c1-.007 1.82.847 1.82 1.9 0 1.048-.82 1.9-1.82 1.9s-1.818-.853-1.818-1.9c0-1.053.817-1.9 1.818-1.9m11.59 4.518c0 .778-.63 1.412-1.41 1.412a1.41 1.41 0 1 1 1.41-1.412m-4.104 1.418h-2.216v-10.28h2.216zM9.33 11.04s2.585 6.79 3.862 10.13c.015.037.028.078.047.132-.06.006-.106.01-.15.01-.83.002-1.665-.003-2.498.004-.12.002-.17-.04-.204-.156-.116-.385-.247-.766-.365-1.147-.032-.11-.074-.153-.193-.153q-1.599.009-3.2 0c-.1 0-.142.03-.173.13-.127.405-.26.81-.39 1.21-.02.076-.05.117-.136.117-.873-.006-1.75-.004-2.623-.004-.016 0-.036-.005-.07-.012.023-.06.04-.115.064-.17 1.287-3.306 3.91-10.085 3.91-10.085h2.12zm-.023 6.674c-.343-1.147-.68-2.274-1.02-3.4h-.03l-1.017 3.4z"></path></svg></span><span class="a2a_label">AOL Mail</span></a>
+    <a class="a2a_button_blogger" target="_blank" rel="nofollow noopener" href="/#blogger"><span class="a2a_svg a2a_s__default a2a_s_blogger" style="background-color: rgb(253, 163, 82);"><svg focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="m25.793 14.325-.166-.344-.277-.214c-.363-.284-2.2.02-2.695-.43-.352-.324-.404-.905-.51-1.69-.197-1.527-.322-1.606-.56-2.122-.866-1.836-3.214-3.217-4.825-3.408h-4.367c-3.436 0-6.244 2.814-6.242 6.248v7.29c0 3.428 2.81 6.238 6.248 6.238h7.174c3.436 0 6.225-2.81 6.244-6.237l.04-5.048-.06-.277zM12.47 11.22h3.464c.66 0 1.195.534 1.195 1.188s-.54 1.195-1.2 1.195h-3.46c-.66 0-1.194-.542-1.194-1.195 0-.654.535-1.19 1.195-1.19zm7.038 9.526H12.47c-.66 0-1.194-.54-1.194-1.188 0-.654.535-1.19 1.195-1.19h7.04c.655 0 1.19.536 1.19 1.19 0 .646-.535 1.188-1.19 1.188z"></path></svg></span><span class="a2a_label">Blogger</span></a>
+<div style="clear: both;"></div></div>
+<script async="" src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
+
+            <div class="computer-controls flex align-center justify-center">
+                <div class="lock"></div>
+                <div id="history-controls">
+                    <button id="back" class="back-button" aria-label="Navigate back">
+                        <picture>
+                            <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/back-arrow.webp" type="image/webp">
+                            <img id="back-button" class="click-tracking" width="100" height="100" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/back-arrow.png" alt="Backward arrow">
+                        </picture>
+                        <span class="sr-only">Go Back</span>
+                    </button>
+
+                    <button id="forward" class="forward-button" aria-label="Navigate forward">
+                        <picture>
+                            <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/forward.webp" type="image/webp">
+                            <img id="forward-button" class="click-tracking" width="100" height="100" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/forward.png" alt="Forward arrow">
+                        </picture>
+                        <span class="sr-only">Go Forward</span>
+                    </button>
+                </div>
+
+                <button id="power-button" class="power-on">
+    <img id="power-off" src="/wp-content/themes/red-button/img/power-off.png" alt="Power button in off status">
+    <img id="power-on" src="/wp-content/themes/red-button/img/power-on.png" alt="Power button in on status">
+</button>                                <div class="left-controls flex">
+                                            <button id="Videos" class="comp-controls button-on click-tracking " style="background-image: url(https://clicktheredbutton.com/wp-content/uploads/2024/05/Videos-300x300.png);" data-cat="14" data-external=""><span class="comp-ctrl-lbl">Videos</span></button>
+                                                <button id="Websites" class="comp-controls button-on click-tracking " style="background-image: url(https://clicktheredbutton.com/wp-content/uploads/2024/05/Websites-300x300.png);" data-cat="11" data-external=""><span class="comp-ctrl-lbl">Websites</span></button>
+                        
+                </div>
+                <button id="computer-red-button" data-cat="0">
+                    <picture>
+                        <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/red-button.webp" type="image/webp">
+                        <img id="Red-Button" width="100" height="100" class="click-tracking" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/red-button.png" alt="Red Button">
+                    </picture>
+                    <span class="visually-hidden">The Red Button</span>
+                </button>
+                <div class="right-controls flex">
+                                        <button id="Games" class="comp-controls button-on click-tracking" style="background-image: url(https://clicktheredbutton.com/wp-content/uploads/2024/05/Games-300x300.png);" data-cat="12"><span class="comp-ctrl-lbl">Games</span></button>
+                                                <button id="Art" class="comp-controls button-on click-tracking" style="background-image: url(https://clicktheredbutton.com/wp-content/uploads/2024/05/Art-300x300.png);" data-cat="13"><span class="comp-ctrl-lbl">Art</span></button>
+                                        </div>
+
+                <button id="favorite" class="favorite-button" aria-label="Like">
+                    <picture>
+                        <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/favorite.webp" type="image/webp">
+                        <img id="like-button" width="100" height="100" class="click-tracking" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/favorite.png" alt="Add to favorites button" data-thing="Test">
+                    </picture>
+                    <picture>
+                        <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/favorite-red.webp" type="image/webp">
+                        <img id="unlike-button" width="100" height="100" class="click-tracking hide" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/favorite-red.png" alt="Remove from Favorites">
+                    </picture>
+
+                    <span class="sr-only">Add to Favorites</span>
+                </button>
+
+                <button id="fave-settings" class="favorite-button" aria-label="Favorites">
+                    <picture>
+                        <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/settings.webp" type="image/webp">
+                        <img id="open-favorites-panel" class="click-tracking" width="100" height="100" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/settings.png" alt="Settings" data-thing="Test">
+                    </picture>
+
+                    <span class="sr-only">Favorites Settings</span>
+                </button>
+
+                <button id="share" class="favorite-button" aria-label="Share">
+                        <picture>
+                            <source srcset="https://clicktheredbutton.com/wp-content/themes/red-button/img/share.webp" type="image/webp">
+                            <img id="share-button" class="click-tracking" width="100" height="100" src="https://clicktheredbutton.com/wp-content/themes/red-button/img/share.png" alt="Settings" data-thing="Test">
+                        </picture>
+                    <span class="sr-only">Share</span>
+                </button>
+            </div>
+        </section>
+
+         <aside class="ad"><script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4375897457858236" crossorigin="anonymous" data-checked-head="true"></script>
+<!-- Click the Red Button API -->
+<ins class="adsbygoogle" style="display: block; height: 600px;" data-ad-client="ca-pub-4375897457858236" data-ad-slot="7347208569" data-ad-format="auto" data-full-width-responsive="true" data-adsbygoogle-status="done" data-ad-status="filled"><div id="aswift_2_host" style="border: none; height: 600px; width: 160px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block; overflow: visible;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:160px;height:600px;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" width="160" height="600" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4375897457858236&amp;output=html&amp;h=600&amp;slotname=7347208569&amp;adk=496917690&amp;adf=2368093577&amp;pi=t.ma~as.7347208569&amp;w=160&amp;abgtt=6&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727539595&amp;rafmt=1&amp;format=160x600&amp;url=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1500&amp;fwr=0&amp;fwrattr=true&amp;rpe=1&amp;resp_fmts=4&amp;wgl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTEyLjAuNTE5Ny43NCIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3QvQSlCcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTI2LjAuNjQ3OC4yMjYiXSxbIk9wZXJhIEdYIiwiMTEyLjAuNTE5Ny43NCJdXSwwXQ..&amp;dt=1727539595582&amp;bpp=10&amp;bdt=166&amp;idt=87&amp;shv=r20240925&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D3d8ccab96b3b568b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MY2FOFlMyRCav0YS7AEDvuDLZlzUg&amp;gpic=UID%3D00000edb140c9d39%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MapGR1sSTHdc5XzEy9xH9zVlcnYRw&amp;eo_id_str=ID%3D9a73a7bcdfd62f8b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DAA-AfjaCjFqBQGTf0LVAFQSb4Hi3&amp;prev_fmts=0x0%2C160x600&amp;nras=1&amp;correlator=4409036757702&amp;frm=20&amp;pv=1&amp;u_tz=-300&amp;u_his=7&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1879&amp;bih=928&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C95339781%2C31087435%2C95341937&amp;oid=2&amp;pvsid=3779679209792116&amp;tmod=1459683861&amp;uas=0&amp;nvt=3&amp;ref=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1451&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C%2C%2C1920%2C1032%2C1879%2C928&amp;vis=1&amp;rsz=%7C%7CenEr%7C&amp;abl=CS&amp;pfx=0&amp;cms=2&amp;fu=32896&amp;bc=31&amp;bz=1.02&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;fsb=1&amp;dtd=89" data-google-container-id="a!3" tabindex="0" title="Advertisement" aria-label="Advertisement" data-google-query-id="CPe7rb-C5ogDFcWWjggd5zUSlQ" data-load-complete="true"></iframe></div></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script></aside>  <script>startTyping();</script> 
+</main><!-- #main -->
+
+
+	<footer id="colophon" class="site-footer container">
+
+		<!-- <div class="footer-info">
+					</div> -->
+
+		<!-- Footer Menu -->
+		
+
+	</footer><!-- #colophon -->
+</div><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;" data-ad-status="unfilled"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-4375897457858236&amp;output=html&amp;adk=591905798&amp;adf=2712804858&amp;abgtt=6&amp;lmt=1727539595&amp;plaf=1%3A2%2C7%3A2&amp;plat=1%3A128%2C2%3A128%2C3%3A128%2C4%3A128%2C9%3A134250504%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C30%3A1081344%2C32%3A32%2C41%3A32%2C42%3A32&amp;format=0x0&amp;url=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1500&amp;pra=5&amp;wgl=1&amp;aihb=0&amp;asro=0&amp;ailel=1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aiael=1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aifxl=29_18~30_19&amp;aiixl=29_5~30_6&amp;aslmct=0.7&amp;asamct=0.7&amp;itsi=13&amp;aipecl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTEyLjAuNTE5Ny43NCIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3QvQSlCcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTI2LjAuNjQ3OC4yMjYiXSxbIk9wZXJhIEdYIiwiMTEyLjAuNTE5Ny43NCJdXSwwXQ..&amp;dt=1727539595577&amp;bpp=1&amp;bdt=162&amp;idt=50&amp;shv=r20240925&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3D3d8ccab96b3b568b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MY2FOFlMyRCav0YS7AEDvuDLZlzUg&amp;gpic=UID%3D00000edb140c9d39%3AT%3D1725655365%3ART%3D1727538658%3AS%3DALNI_MapGR1sSTHdc5XzEy9xH9zVlcnYRw&amp;eo_id_str=ID%3D9a73a7bcdfd62f8b%3AT%3D1725655365%3ART%3D1727538658%3AS%3DAA-AfjaCjFqBQGTf0LVAFQSb4Hi3&amp;nras=1&amp;correlator=4409036757702&amp;frm=20&amp;pv=2&amp;u_tz=-300&amp;u_his=7&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=1879&amp;bih=928&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759842%2C95339781%2C31087435%2C95341937&amp;oid=2&amp;pvsid=3779679209792116&amp;tmod=1459683861&amp;uas=0&amp;nvt=3&amp;fsapi=1&amp;ref=https%3A%2F%2Fclicktheredbutton.com%2F%3Fsite%3D1451&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C%2C%2C1920%2C1032%2C1879%2C928&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=32768&amp;bc=31&amp;bz=1.02&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=a!1&amp;fsb=1&amp;dtd=62" data-google-container-id="a!1" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><!-- #page -->
+
+<script>
+
+	const clicksToRefresh = "10";	
+	const adMix = {"cat_0":{"likelihood":"5","clicks":"15"},"cat_red_button":{"likelihood":"5","clicks":"15"},"cat_29":{"likelihood":"5","clicks":"15"},"cat_28":{"likelihood":"5","clicks":"15"},"cat_14":{"likelihood":"5","clicks":"15"},"cat_11":{"likelihood":"5","clicks":"15"},"cat_12":{"likelihood":"5","clicks":"15"},"cat_13":{"likelihood":"5","clicks":"15"},"cat_25":{"likelihood":"5","clicks":"15"}};	
+	var ctrb_transitions = ["https:\/\/clicktheredbutton.com\/wp-content\/uploads\/2024\/04\/Untitled-design-1-1.gif"];var eggs = [{"egg_image":"https:\/\/clicktheredbutton.com\/wp-content\/uploads\/2024\/04\/SystemReboot_V2.gif","duration":"2.85"}];</script>
+
+
+
+
+
+<div style="position: static;"><div class="a2a_overlay" id="a2a_overlay"></div><div id="a2a_modal" class="a2a_modal a2a_hide" role="dialog" tabindex="-1" aria-label=""><div class="a2a_modal_body a2a_menu a2a_hide" id="a2a_copy_link"><span id="a2a_copy_link_icon" class="a2a_svg a2a_s_link a2a_logo_color"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path fill="#FFF" d="M7.591 21.177c0-.36.126-.665.377-.917l2.804-2.804a1.235 1.235 0 0 1 .913-.378c.377 0 .7.144.97.43-.026.028-.11.11-.255.25-.144.14-.24.236-.29.29a2.82 2.82 0 0 0-.2.256 1.056 1.056 0 0 0-.177.344 1.43 1.43 0 0 0-.046.37c0 .36.126.666.377.918a1.25 1.25 0 0 0 .918.377c.126.001.251-.015.373-.047.125-.037.242-.096.345-.175.09-.06.176-.127.256-.2.1-.094.196-.19.29-.29.14-.142.223-.23.25-.254.297.28.445.607.445.984 0 .36-.126.664-.377.916l-2.778 2.79a1.242 1.242 0 0 1-.917.364c-.36 0-.665-.118-.917-.35l-1.982-1.97a1.223 1.223 0 0 1-.378-.9l-.001-.004Zm9.477-9.504c0-.36.126-.665.377-.917l2.777-2.79a1.235 1.235 0 0 1 .913-.378c.35 0 .656.12.917.364l1.984 1.968c.254.252.38.553.38.903 0 .36-.126.665-.38.917l-2.802 2.804a1.238 1.238 0 0 1-.916.364c-.377 0-.7-.14-.97-.418.026-.027.11-.11.255-.25a7.5 7.5 0 0 0 .29-.29c.072-.08.139-.166.2-.255.08-.103.14-.22.176-.344.032-.12.048-.245.047-.37 0-.36-.126-.662-.377-.914a1.247 1.247 0 0 0-.917-.377c-.136 0-.26.015-.37.046-.114.03-.23.09-.346.175a3.868 3.868 0 0 0-.256.2c-.054.05-.15.148-.29.29-.14.146-.222.23-.25.258-.294-.278-.442-.606-.442-.983v-.003ZM5.003 21.177c0 1.078.382 1.99 1.146 2.736l1.982 1.968c.745.75 1.658 1.12 2.736 1.12 1.087 0 2.004-.38 2.75-1.143l2.777-2.79c.75-.747 1.12-1.66 1.12-2.737 0-1.106-.392-2.046-1.183-2.818l1.186-1.185c.774.79 1.708 1.186 2.805 1.186 1.078 0 1.995-.376 2.75-1.13l2.803-2.81c.751-.754 1.128-1.671 1.128-2.748 0-1.08-.382-1.993-1.146-2.738L23.875 6.12C23.13 5.372 22.218 5 21.139 5c-1.087 0-2.004.382-2.75 1.146l-2.777 2.79c-.75.747-1.12 1.66-1.12 2.737 0 1.105.392 2.045 1.183 2.817l-1.186 1.186c-.774-.79-1.708-1.186-2.805-1.186-1.078 0-1.995.377-2.75 1.132L6.13 18.426c-.754.755-1.13 1.672-1.13 2.75l.003.001Z"></path></svg></span><input id="a2a_copy_link_text" type="text" title="Copy link" readonly=""><div id="a2a_copy_link_copied">✓</div></div><div class="a2a_modal_body a2a_menu a2a_thanks a2a_hide" id="a2a_thanks"><div class="a2a_localize" data-a2a-localize="inner,ThanksForSharing">Thanks for sharing!</div></div></div><div class="a2a_menu a2a_full a2a_localize" id="a2apage_full" role="dialog" tabindex="-1" aria-label="Share" data-a2a-localize="title,Share"><div class="a2a_full_header"><div id="a2apage_find_container" class="a2a_menu_find_container"><input id="a2apage_find" class="a2a_menu_find a2a_localize" type="text" autocomplete="off" title="Find any service" data-a2a-localize="title,FindAnyServiceToAddTo"><span id="a2apage_find_icon" class="a2a_svg a2a_s_find"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="#CCC" d="M19.7 18.2l-4.5-4.5c.7-1.1 1.2-2.3 1.2-3.6 0-3.5-2.8-6.3-6.3-6.3s-6.3 2.8-6.3 6.3 2.8 6.3 6.3 6.3c1.4 0 2.6-.4 3.6-1.2l4.5 4.5c.6.6 1.3.7 1.7.2.5-.4.4-1.1-.2-1.7zm-9.6-3.6c-2.5 0-4.5-2.1-4.5-4.5 0-2.5 2.1-4.5 4.5-4.5 2.5 0 4.5 2.1 4.5 4.5s-2 4.5-4.5 4.5z"></path></svg></span></div></div><div class="a2a_full_services" id="a2apage_full_services" role="presentation"></div><div class="a2a_full_footer"><a href="https://www.addtoany.com" title="Share Buttons" rel="noopener" target="_blank"><span class="a2a_svg a2a_s__default a2a_s_a2a a2a_logo_color"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M14 7h4v18h-4z"></path><path d="M7 14h18v4H7z"></path></g></svg></span>AddToAny</a></div></div><div id="a2apage_dropdown" class="a2a_menu a2a_mini a2a_localize a2a_hide" tabindex="-1" aria-label="Share" data-a2a-localize="label,Share"><div class="a2a_mini_services" id="a2apage_mini_services"></div><div id="a2apage_cols_container" class="a2a_cols_container"><div class="a2a_col1" id="a2apage_col1"></div><div id="a2apage_2_col1" class="a2a_hide"></div><div class="a2a_clear"></div></div><div class="a2apage_wide a2a_wide"><a href="#addtoany" id="a2apage_show_more_less" class="a2a_more a2a_localize" title="Show all" data-a2a-localize="title,ShowAll"><span class="a2a_svg a2a_s__default a2a_s_a2a a2a_logo_color"><svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><g fill="#FFF"><path d="M14 7h4v18h-4z"></path><path d="M7 14h18v4H7z"></path></g></svg></span><span class="a2a_localize" data-a2a-localize="inner,More">More…</span></a></div></div><div style="height: 1px; width: 1px; position: absolute; z-index: 100000; top: 0px; visibility: hidden;"><iframe id="a2a_sm_ifr" title="AddToAny Utility Frame" aria-hidden="true" src="https://static.addtoany.com/menu/sm.25.html#type=core&amp;event=load" style="height: 1px; width: 1px; border: 0px; left: 0px; top: 0px; position: absolute; z-index: 100000; display: none;"></iframe></div></div><iframe name="googlefcPresent" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="__tcfapiLocator" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcInactive" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe name="googlefcLoaded" src="about:blank" style="display: none; width: 0px; height: 0px; border: none; z-index: -1000; left: -1000px; top: -1000px;"></iframe><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe></body>
