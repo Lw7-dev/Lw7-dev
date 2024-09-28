@@ -1,505 +1,93 @@
-<html><head>
-	<meta charset="utf-8">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<title>Getaway Shootout Unblocked - ubg235 Poki</title>
-	<script src="https://www.googletagmanager.com/gtag/js?id=G-E7D3EVY6HR"></script><script>
-	window.config = {
-		loader: 'unity-2020',
-		debug: false,
-		maxRatio: 24 / 9,
-		minRatio: 9 / 24,
-
-		title: 'Getaway Shootout',
-		thumbnail: 'patch/png/null.png?https:\/\/img.poki.com\/934bde36-a4a1-43d0-8b35-30f15feddbb4.png',
-		numScreenshots:  4 ,
-
-		unityVersion: '2020.3.43f1',
-		unityWebglBuildUrl: '',
-
-		fileSize:  18 ,
-		cachedDecompressedFileSizes: {
-			'1214fbea69c5893898f0c094bddb36cf.js':  10913 ,
-			'57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js':  455369 ,
-			'd6ece658d7fb23fdee2f8d277596a675.wasm':  11052334 ,
-			'e2bd1bcb1a8f61af3745639e6e51fd11.data':  6569519 ,
-		},
-		"metadata": {"poki_template_version":1,"background_color":"#231F20","code_filename":"d6ece658d7fb23fdee2f8d277596a675.wasm","company_name":"New Eich Games","data_filename":"e2bd1bcb1a8f61af3745639e6e51fd11.data","development_player":"false","framework_filename":"57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js","height":"600","loader_filename":"1214fbea69c5893898f0c094bddb36cf.js","product_name":"Getaway Shootout","product_version":"1.2","splash_screen_style":"Dark","total_memory":"268435456","unity_version":"2020.3.43f1","use_data_caching":"false","use_threads":"false","use_wasm":"true","use_webgl_1_0":"true","use_webgl_2_0":"true","width":"960"}
-	};
-	</script>
-<!-- will be copied to the resulting head //-->
-<style type="text/css"></style><style type="text/css">* {
-    margin: 0;
-    padding: 0;
-}
-
-html,
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-    background: #002B50;
-    font-family: Torus, Arial, Helvetica, sans-serif;
-    color: #fff;
-}
-
-#game-container {
-    position: absolute !important;
-    left: 50%;
-    top: 50%;
-    display: none;
-}
-
-#game,
-#game canvas {
-    width: 100%;
-    height: 100%;
-}
-
-#loader {
-    width: 100%;
-    height: 100%;
-}
-
-/**
-   * Slideshow
-   */
-
-#slideshow {
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    display: flex;
-    user-select: none;
-}
-
-@font-face {
-    font-family: Torus;
-    src:
-        url('patch/fonts/torus-bold-webfont.woff2') format('woff2'),
-        url('patch/fonts/torus-bold-webfont.woff') format('woff');
-    font-style: bold;
-    font-weight: 700;
-}
-
-/**
-   * Slideshow - Top section
-   */
-#progress-spinner{
-    margin-left: 0;
-    margin-top: 0;
-    left: 0px;
-    display:none;
-    transform: translate(100%, -50%);
-    width:10vh;
-}
-#progress-spinner >div{
-    width:2vh;
-    height:2vh;
-}
-#thumbnail {
-    box-shadow: 0 1vh 2vh rgba(0, 0, 0, 0.4);
-    /* box-shadow: 0 6px 12px rgba(0, 0, 0, 0.24); */
-    border-radius: 16.667%;
-}
-
-#slideshow-top {
-    display: flex;
-    margin: 2.5vh 0;
-}
-
-#slideshow-top-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1;
-}
-
-#game-title, #progress-comment {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    font-size:2vh;
-}
-
-#progress-container {
-    display: flex;
-    align-items: center;
-    flex-grow: 1;
-    transition: 0.2s ease-out all;
-}
-
-#progress-container.done {
-    opacity: 0;
-}
-
-#progress-bar {
-    background: #fff;
-    width: 100%;
-    overflow: hidden;
-}
-
-#progress-fill {
-    background: #3CF7DC;
-    height: 100%;
-    transition: 0.2s ease-out all;
-    animation-name: fillColor;
-    animation-duration: 3.5s;
-    animation-iteration-count: infinite;
-    animation-fill-mode: both;
-}
-
-@keyframes fillColor {
-    0% {
-        background-color: #3CF7DC;
-    }
-
-    25% {
-        background-color: #FFA9BE;
-    }
-
-    50% {
-        background-color: #FFDC00;
-    }
-
-    75% {
-        background-color: #E0AEF5;
-    }
-
-    100% {
-        background-color: #3CF7DC;
-    }
-}
-
-@media (orientation: portrait) {
-    #thumbnail {
-        margin-right: 2.4vh;
-    }
-
-    #game-title h1 {
-        font-size: 2vh;
-    }
-
-    #slideshow-top {
-        width: 70vw;
-    }
-
-    #progress-bar {
-        height: 1vh;
-        border-radius: 0.5vh;
-    }
-
-    #progress-fill {
-        border-radius: 0.5vh;
-    }
-
-    #thumbnail {
-        width: 5vh;
-        height: 5vh;
-    }
-
-    #progress-amount {
-        font-size: 2vh;
-        margin-left: 1.5vh;
-        width: 3vh;
-    }
-}
-
-@media (orientation: landscape) {
-    #thumbnail {
-        margin-right: 3vh;
-    }
-
-    #game-title h1 {
-        font-size: 3vh;
-    }
-
-    #slideshow-top {
-        width: 50vw;
-    }
-
-    #progress-bar {
-        height: 1.2vh;
-        border-radius: 0.6vh;
-    }
-
-    #progress-fill {
-        border-radius: 0.6vh;
-    }
-
-    #thumbnail {
-        width: 7.5vh;
-        height: 7.5vh;
-    }
-
-    #progress-amount {
-        font-size: 2.5vh;
-        margin-left: 1.875vh;
-        width: 3.75vh;
-    }
-}
-
-/**
-   * Slideshow - Images section
-   */
-
-#slideshow-images {
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-}
-
-#slideshow-images .image {
-    position: absolute;
-    box-shadow: 0 2.4vh 3.6vh rgba(0, 0, 0, 0.4);
-    transition-property: transform;
-    transition-timing-function: ease-in-out;
-    perspective: 1000px;
-    left: 0;
-    overflow: hidden;
-    /* border: 1vh solid; */
-}
-
-#slideshow-images .image img {
-    width: 100%;
-    height: 100%;
-}
-
-#slideshow-images .image:nth-of-type(1n) {
-    border-color: #3BE8B0;
-}
-
-#slideshow-images .image:nth-of-type(2n) {
-    border-color: #FF6D92;
-}
-
-#slideshow-images .image:nth-of-type(3n) {
-    border-color: #A177FF;
-}
-
-#slideshow-images .image:nth-of-type(4n) {
-    border-color: #FFD200;
-}
-
-#slideshow-images .left {
-    z-index: 2;
-}
-#slideshow-images .right {
-    z-index: 1;
-}
-
-#slideshow-images .middle {
-    z-index: 3;
-}
-
-#slideshow-images .left img,
-#slideshow-images .right img {
-    transform: scale(1.05);
-}
-
-#slideshow-images .left img,
-#slideshow-images .right img,
-#slideshow-images .fromLeft img,
-#slideshow-images .fromRight img {
-    filter: blur(1vh);
-}
-
-#slideshow-images .inactive {
-    display: none;
-}
-
-#slideshow-images .inactive.fromLeft,
-#slideshow-images .inactive.fromRight {
-    display: block;
-}
-
-/**
-   * Slideshow - Navigation section
-   */
-
-#slideshow-nav {
-    display: flex;
-    justify-content: center;
-    margin: 2.5vh 0;
-}
-
-#slideshow-nav .bullet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#slideshow-nav .bullet:after {
-    content: '';
-    background: #fff;
-    border-radius: 0.4vh;
-    width: 0.8vh;
-    height: 0.8vh;
-}
-
-#slideshow-nav .bullet.active:after {
-    background: #009CFF;
-}
-
-#slideshow-nav .bullet {
-    width: 2.5vh;
-    height: 2.5vh;
-}
-
-#slideshow-nav .bullet:after {
-    border-radius: 50%;
-    width: 50%;
-    height: 50%;
-}
-
-/**
-   * Pop-in animation
-   */
-
-#slideshow-nav,
-#slideshow-images {
-    opacity: 0;
-    transition: 0.4s all ease-out;
-    transform: translateY(2vh);
-    perspective: 1000px;
-    transition-delay: 400ms;
-}
-
-#slideshow-nav {
-    transition-delay: 600ms;
-}
-
-#slideshow.active #slideshow-images,
-#slideshow.active #slideshow-nav {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-@keyframes bounceInDown {
-
-    from,
-    60%,
-    75%,
-    90%,
-    to {
-        animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
-    }
-
-    0% {
-        transform: translate3d(0, -100vh, 0);
-    }
-
-    40% {
-        transform: translate3d(0, 0.5vh, 0);
-    }
-
-    65% {
-        transform: translate3d(0, -0.2vh, 0);
-    }
-
-    80% {
-        transform: translate3d(0, 0.1vh, 0);
-    }
-
-    to {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-#slideshow-top {
-    transform: translate3d(0, -20vh, 0);
-    opacity: 0;
-}
-
-#slideshow-top.active {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-    animation-name: bounceInDown;
-    animation-duration: 0.5s;
-}
-
-/**
-   * Loading dots
-   */
-.spinner {
-    position: relative;
-    left: -9999px;
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: .25s;
-    transform:translate(50vw, 50vh) translate(-130%, -130%);
-  }
-
-  .spinner:before, .spinner:after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-  }
-  .spinner, .spinner:before, .spinner:after{
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-  }
-
-  .spinner:before {
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: 0s;
-    left:-20px;
-  }
-
-  .spinner:after {
-    animation: dot-pulse 1.5s infinite linear;
-    animation-delay: .5s;
-    left:20px;
-  }
-
-  @keyframes dot-pulse {
-    0% {
-      box-shadow: 9999px 0 0 -5px #FFF;
-    }
-    30% {
-      box-shadow: 9999px 0 0 2px #FFF;
-    }
-    60%,
-    100% {
-      box-shadow: 9999px 0 0 -5px #FFF;
-    }
-  }
-</style></head>
-<body>
-	<script src="patch/js/poki-master-loader.js"></script><script src="patch/js/poki-sdk.js"></script>
-  <script src="js/analytics_ubg_v1_4.js"></script>
-  <script src="js/ubg235_client_v1_1.js"></script>
-<!-- will be copied to the resulting body //-->
-<!-- will also be copied to the resulting body //-->
-
-
-<script src="https://ubg44.github.io/GetawayShootout/patch/js/poki-unity-2020.js"></script><div id="loader" style="display: none;"><div id="slideshow" class="active"><div id="slideshow-top" class="active"><img id="thumbnail" alt="Getaway Shootout" title="Getaway Shootout" src="patch/png/null.png?https://img.poki.com/934bde36-a4a1-43d0-8b35-30f15feddbb4.png"><div id="slideshow-top-container"><div id="game-title">Getaway Shootout</div><div id="progress-spinner" class="spinner" style="display: flex;"><div class="bounce0"></div><div class="bounce1"></div><div class="bounce2"></div></div><div id="progress-container" class="done"><div id="progress-bar"><div id="progress-fill" style="width: 100%;"></div></div><div id="progress-amount" style="width: 12vh; white-space: nowrap;">100% of 18MB</div></div><div id="progress-comment">Preparing game...</div></div></div><div id="slideshow-images"><div class="image middle" fullimageloaded="true" data-idx="0"><img src="https://ubg44.github.io/GetawayShootout/screenshots/1.jpg"></div><div class="image right" data-idx="1" fullimageloaded="true"><img src="https://ubg44.github.io/GetawayShootout/screenshots/2.jpg"></div><div class="image inactive" data-idx="2"><img src="screenshots/3-small.jpg"></div><div class="image left" data-idx="3"><img src="screenshots/4-small.jpg"></div></div><div id="slideshow-nav"><div class="bullet active" data-idx="0"></div><div class="bullet" data-idx="1"></div><div class="bullet" data-idx="2"></div><div class="bullet" data-idx="3"></div></div></div></div><div id="game-container" style="display: block; width: 808px; height: 825px; margin-left: -404px; margin-top: -412.5px;"><canvas id="game" width="808" height="825" style="cursor: default;"></canvas></div><script src="https://www.ubg235.com/js/ubg235_server_v1_0.js" type="text/javascript" async="true"></script><script src="Build/1214fbea69c5893898f0c094bddb36cf.js"></script><script src="https://www.ubg235.com/logs/?w=1920&amp;h=1080&amp;ua=Mozilla%2F5.0%20(Windows%20NT%2010.0%3B%20Win64%3B%20x64)%20AppleWebKit%2F537.36%20(KHTML%2C%20like%20Gecko)%20Chrome%2F126.0.0.0%20Safari%2F537.36%20OPR%2F112.0.0.0&amp;l=https%3A%2F%2Fubg44.github.io%2FGetawayShootout%2F&amp;p=https://www.ubg235.com/na/" type="text/javascript" async="false"></script><style>
-		#slideshow-images {
-			height: 44.07272727272728vh;
-		}
-		#slideshow-images .image {
-			transition-duration: 0.5s;
-			width: 60vw;
-			height: 44.07272727272728vh;
-		}
-		#slideshow-images .middle {
-			transform: translateX(20vw);
-		}
-		#slideshow-images .left {
-			transform: translateX(-34vw) scale(0.8);
-		}
-		#slideshow-images .right {
-			transform: translateX(74vw) scale(0.8);
-		}
-		#slideshow-images .inactive.fromLeft {
-			transform: translateX(-60vw) scale(0.4);
-		}
-		#slideshow-images .inactive.fromRight {
-			transform: translateX(130vw) scale(0.4);
-		}
-	</style><script src="Build/57c3e4e4cd0ccbb1f0cbcdc9dbe8fd6e.js"></script><script src="https://www.ubg235.com/ads/commercial.js" type="text/javascript" async="true"></script></body></html>
+<html lang="en-us"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | Slope</title>
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
+    <link rel="stylesheet" href="TemplateData/style.css">
+  <script id="id-jssdk" src="https://cdn.y8.com/api/sdk.js"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202409250101/slotcar_library_fy2021.js?bust=31087523"></script><script src="https://pagead2.googlesyndication.com/pagead/managed/js/adsense/m202409250101/show_ads_impl_fy2021.js?bust=31087523"></script><script src="https://img.y8.com/prevent-keys.js"></script><style type="text/css">:root [href^="//mage98rquewz.com/"], :root [href^="//x4pollyxxpush.com/"], :root span[id^="ezoic-pub-ad-placeholder-"], :root ins.adsbygoogle[data-ad-slot], :root ins.adsbygoogle[data-ad-client], :root guj-ad, :root gpt-ad, :root div[id^="zergnet-widget"], :root div[id^="vuukle-ad-"], :root div[id^="taboola-stream-"], :root div[id^="sticky_ad_"], :root div[id^="st"][style^="z-index: 999999999;"], :root div[id^="pa_sticky_ad_box_middle_"], :root div[id^="gpt_ad_"], :root div[id^="ezoic-pub-ad-"], :root div[id^="dfp-ad-"], :root div[id^="crt-"][style], :root div[id^="adspot-"], :root div[id^="adrotate_widgets-"], :root ps-connatix-module, :root div[id^="ad_position_"], :root div[id^="ad-div-"], :root div[id*="ScriptRoot"], :root div[id*="MarketGid"], :root div[data-id-advertdfpconf], :root hl-adsense, :root div[data-contentexchange-widget], :root div[data-alias="300x250 Ad 2"], :root div[data-adzone], :root div[data-adunit-path], :root div[data-adname], :root div[data-ad-placeholder], :root div[class^="native-ad-"], :root div[data-dfp-id], :root div[class^="kiwi-ad-wrapper"], :root div[aria-label="Ads"], :root display-ads, :root display-ad-component, :root atf-ad-slot, :root aside[id^="adrotate_widgets-"], :root ark-top-ad, :root amp-fx-flying-carpet, :root amp-embed[type="taboola"], :root amp-connatix-player, :root amp-ad-custom, :root amp-ad, :root div[id^="google_dfp_"], :root ad-slot, :root ad-shield-ads, :root a[style="width:100%;height:100%;z-index:10000000000000000;position:absolute;top:0;left:0;"], :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"] + .ob_source, :root a[href^="https://xbet-4.com/"], :root div[id^="ad-position-"], :root a[href^="https://www.toprevenuegate.com/"], :root a[href^="https://www.sugarinstant.com/?partner_id="], :root a[href^="https://www.purevpn.com/"][href*="&utm_source=aff-"], :root a[href^="https://www.privateinternetaccess.com/"] > img, :root a[href^="https://www.onlineusershielder.com/"], :root a[href^="https://financeads.net/tc.php?"], :root a[href^="https://www.mrskin.com/tour"], :root a[href^="https://www.infowarsstore.com/"] > img, :root a[href^="https://www.highperformancecpmgate.com/"], :root a[href^="https://www.highcpmrevenuenetwork.com/"], :root a[href^="https://lnkxt.bannerator.com/"], :root a[href^="https://www.geekbuying.com/dynamic-ads/"], :root a[href^="https://www.financeads.net/tc.php?"], :root [href^="https://www.herbanomic.com/"] > img, :root a[href^="https://maymooth-stopic.com/"], :root a[href^="https://www.dql2clk.com/"], :root a[href^="https://www.nutaku.net/signup/landing/"], :root a[href^="https://www.dating-finder.com/signup/?ai_d="], :root a[href^="https://explore-site.com/"], :root a[href^="https://www.brazzersnetwork.com/landing/"], :root a[href^="https://www.adxsrve.com/"], :root [data-template-type="nativead"], :root a[href^="https://www.endorico.com/Smartlink/"], :root a[href^="https://www.adultempire.com/"][href*="?partner_id="], :root a[href^="https://voluum.prom-xcams.com/"], :root a[href^="https://twinrdsrv.com/"], :root a[href^="https://trk.nfl-online-streams.club/"], :root a[href^="https://tracking.avapartner.com/"], :root a[href^="https://track.wg-aff.com"], :root a[href^="https://track.ultravpn.com/"], :root a[href^="https://track.afcpatrk.com/"], :root a[href^="https://torguard.net/aff.php"] > img, :root [data-identity="adhesive-ad"], :root a[href^="https://tc.tradetracker.net/"] > img, :root a[href^="https://tatrck.com/"], :root a[href^="https://click.candyoffers.com/"], :root [href^="https://zstacklife.com/"] img, :root a[href^="https://t.aslnk.link/"], :root a[href^="https://t.adating.link/"], :root a[href^="https://safesurfingtoday.com/"][href*="?skip="], :root a[href^="https://land.brazzersnetwork.com/landing/"], :root a[href^="https://t.acam.link/"], :root a[href*="//daichoho.com/"], :root a[href^="https://syndication.optimizesrv.com/"], :root a[href^="https://go.trackitalltheway.com/"], :root [href^="https://track.fiverr.com/visit/"] > img, :root a[href^="https://syndication.exoclick.com/"], :root a[href^="https://syndication.dynsrvtbg.com/"], :root div[data-alias="300x250 Ad 1"], :root a[href^="https://syndicate.contentsserved.com/"], :root a[href^="https://svb-analytics.trackerrr.com/"], :root a[href^="https://streamate.com/landing/click/"], :root a[href^="https://ad.doubleclick.net/"], :root a[href^="https://static.fleshlight.com/images/banners/"], :root a[href^="https://slkmis.com/"], :root bottomadblock, :root a[href^="https://s.zlinkd.com/"], :root a[href^="https://s.zlink3.com/"], :root a[href^="https://www.mrskin.com/account/"], :root a[href^="https://s.optzsrv.com/"], :root a[href^="https://random-affiliate.atimaze.com/"], :root #kt_player > div[style$="display: block;"][style*="inset: 0px;"], :root a[href^="https://quotationfirearmrevision.com/"], :root a[href^="https://pubads.g.doubleclick.net/"], :root a[href^="https://ak.oalsauwy.net/"], :root a[href^="https://softwa.cfd/"], :root a[href^="https://play1ad.shop/"], :root a[href^="https://prf.hn/click/"][href*="/camref:"] > img, :root a[href^="https://www.dating-finder.com/?ai_d="], :root a[href^="https://serve.awmdelivery.com/"], :root a[href^="https://prf.hn/click/"][href*="/adref:"] > img, :root app-ad, :root [href^="https://ap.octopuspop.com/click/"] > img, :root a[href^="https://postback1win.com/"], :root a[href^="https://mmwebhandler.aff-online.com/"], :root a[href^="https://www.bet365.com/"][href*="affiliate="], :root a[href^="https://pb-track.com/"], :root a[href^="https://pb-front.com/"], :root a[href^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://ngineet.cfd/"], :root a[href^="https://upsups.click/"], :root a[href^="https://ndt5.net/"], :root a[href^="http://eighteenderived.com/"], :root a[href^="https://natour.naughtyamerica.com/track/"], :root a[href^="https://mediaserver.entainpartners.com/renderBanner.do?"], :root a[href^="https://m.do.co/c/"] > img, :root .nya-slot[style], :root a[href^="https://a.bestcontentweb.top/"], :root a[href^="https://lobimax.com/"], :root a[href^="https://lead1.pl/"], :root a[href^="https://landing.brazzersnetwork.com/"], :root a[href^="https://join.virtuallust3d.com/"], :root a[href^="https://kiksajex.com/"], :root a[href^="https://juicyads.in/"], :root a[href^="https://snowdayonline.xyz/"], :root a[href^="https://mediaserver.gvcaffiliates.com/renderBanner.do?"], :root a[href^="https://join.dreamsexworld.com/"], :root a[href^="https://jaxofuna.com/"], :root a[href^="https://itubego.com/video-downloader/?affid="], :root a[href^="https://italarizege.xyz/"], :root a[href^="https://iqbroker.com/"][href*="?aff="], :root a[href^="https://hot-growngames.life/"], :root a[href^="https://golinks.work/"], :root a[href^="https://go.xxxvjmp.com/"], :root [class^="tile-picker__CitrusBannerContainer-sc-"], :root a[href^="https://go.xxxiijmp.com"], :root a[href^="https://go.xtbaffiliates.com/"], :root .OUTBRAIN[data-widget-id^="FMS_REELD_"], :root [data-role="tile-ads-module"], :root a[href^="https://go.xlviirdr.com"], :root a[href^="https://go.xlviiirdr.com"], :root a[href^="https://ismlks.com/"], :root [href^="https://www.mypillow.com/"] > img, :root a[href^="https://go.xlirdr.com"], :root [data-css-class="dfp-inarticle"], :root a[href^="https://l.hyenadata.com/"], :root a[href^="https://go.tmrjmp.com"], :root a[href^="https://zirdough.net/"], :root a[href^="https://s.deltraff.com/"], :root a[href^="https://go.markets.com/visit/?bta="], :root a[href^="https://billing.purevpn.com/aff.php"] > img, :root a[href^="https://go.hpyrdr.com/"], :root a[href^="https://lijavaxa.com/"], :root a[href^="https://go.goaserv.com/"], :root a[href^="https://t.hrtye.com/"], :root a[href^="https://go.etoro.com/"] > img, :root a[href^="https://go.dmzjmp.com"], :root div[class^="Display_displayAd"], :root a[href^="https://www.bang.com/?aff="], :root #mgb-container > #mgb, :root a[href^="https://go.admjmp.com"], :root a[href^="https://get.surfshark.net/aff_c?"][href*="&aff_id="] > img, :root a[href^="https://www.adskeeper.com"], :root a[data-redirect^="https://paid.outbrain.com/network/redir?"], :root [href^="https://clicks.affstrack.com/"] > img, :root a[href^="https://ak.hauchiwu.com/"], :root a[href^="https://engine.phn.doublepimp.com/"], :root a[href^="https://engine.blueistheneworanges.com/"], :root a[href^="https://drumskilxoa.click/"], :root a[href^="https://dl-protect.net/"], :root a[href^="https://rixofa.com/"], :root #ads[style^="position: absolute; z-index: 30; width: 100%; height"], :root a[href^="https://disobediencecalculatormaiden.com/"], :root a[href*=".foxqck.com/"], :root a[href^="https://ctosrd.com/"], :root a[href^="https://clixtrac.com/"], :root [href^="https://noqreport.com/"] > img, :root a[href^="https://clicks.pipaffiliates.com/"], :root a[href^="https://datewhisper.life/"], :root a[href^="https://get-link.xyz/"], :root a[href^="https://click.linksynergy.com/fs-bin/"] > img, :root a[href^="https://combodef.com/"], :root AD-TRIPLE-BOX, :root a[href^="https://click.hoolig.app/"], :root a[href^="https://track.totalav.com/"], :root img[src^="https://images.purevpnaffiliates.com"], :root a[href^="https://porntubemate.com/"], :root a[href^="https://clickadilla.com/"], :root a[href^="https://click.dtiserv2.com/"], :root a[href^="https://go.xlvirdr.com"], :root a[href^="http://www.iyalc.com/"], :root a[href^="https://claring-loccelkin.com/"], :root a[href^="https://s.ma3ion.com/"], :root a[href^="https://cams.imagetwist.com/in/?track="], :root a[href^="https://bongacams2.com/track?"], :root a[href^="https://t.ajrkm1.com/"], :root [href="https://masstortfinancing.com"] img, :root a[href^="https://bongacams10.com/track?"], :root a[href^="https://www.sheetmusicplus.com/"][href*="?aff_id="], :root a[href^="https://bngpt.com/"], :root a[href^="https://black77854.com/"], :root a[href^="https://banners.livepartners.com/"], :root a[href^="http://revolvemockerycopper.com/"], :root a[href^="https://awptjmp.com/"], :root a[href^="https://join.sexworld3d.com/track/"], :root a[href^="https://intenseaffiliates.com/redirect/"], :root a[href^="https://aweptjmp.com/"], :root [class^="s2nPlayer"], :root a[href^="https://chaturbate.jjgirls.com/?track="], :root a[href^="https://ausoafab.net/"], :root a[href^="https://activate-game.com/"], :root .scroll-fixable.rail-right > .deals-rail, :root [data-wpas-zoneid], :root a[href^="https://a2.adform.net/"], :root a[href^="https://auesk.cfd/"], :root a[href^="https://ak.psaltauw.net/"], :root a[href^="https://adclick.g.doubleclick.net/"], :root a[href^="https://bc.game/"], :root a[href^="https://a.bestcontentoperation.top/"], :root a[href^="https://adultfriendfinder.com/go/"], :root a[href^="https://ads.planetwin365affiliate.com/"], :root a[href^="https://ads.leovegas.com/"], :root a[href^="https://a.candyai.love/"], :root a[href^="https://playnano.online/offerwalls/?ref="], :root a[href^="https://a.adtng.com/"], :root [data-m-ad-id], :root a[href^="https://a-ads.com/"], :root div[id^="rc-widget-"], :root a[href^="http://eslp34af.click/"], :root a[href^="https://turnstileunavailablesite.com/"], :root a[href^="https://chaturbate.com/in/?"], :root a[href^="https://prf.hn/click/"][href*="/creativeref:"] > img, :root a[href*="&maxads="], :root a[href^="http://www.adultempire.com/unlimited/promo?"][href*="&partner_id="], :root a[href^="https://1betandgonow.com/"], :root a[href^="https://eergortu.net/"], :root div[id^="optidigital-adslot"], :root a[href^="https://123-stream.org/"], :root a[href^="http://www.friendlyduck.com/AF_"], :root a[href^="https://allhost.shop/aff.php?"], :root [data-dynamic-ads], :root a[href^="http://vnte9urn.click/"], :root a[href^="https://getvideoz.click/"], :root a[href^="http://troopsassistedstupidity.com/"], :root a[href^="http://trk.globwo.online/"], :root a-ad, :root a[href^="https://offhandpump.com/"], :root a[href^="http://stickingrepute.com/"], :root #slashboxes > .deals-rail, :root [data-rc-widget="data-rc-widget"], :root a[href^="http://premonitioninventdisagree.com/"], :root a[href^="http://naggingirresponsible.com/"], :root a[href^="https://in.rabbtrk.com/"], :root div[data-ad-targeting], :root a[href^="https://hotplaystime.life/"], :root a[href^="http://www.h4trck.com/"], :root a[href^="https://81ac.xyz/"], :root a[href^="http://guestblackmail.com/"], :root a[href^="http://cam4com.go2cloud.org/aff_c?"], :root a[href^="https://ads.betfair.com/redirect.aspx?"], :root [href^="https://www.mypatriotsupply.com/"] > img, :root a[href^="https://trk.softonixs.xyz/"], :root a[href^="https://sexynearme.com/"], :root a[href^="https://myclick-2.com/"], :root a[href^="http://dragnag.com/"], :root a[href^="https://trk.sportsflix4k.club/"], :root a[href^="http://dragfault.com/"], :root [id^="div-gpt-ad"], :root .ob_container .item-container-obpd, :root div[id^="yandex_ad"], :root a[href^="https://www8.smartadserver.com/"], :root a[href^="https://pb-imc.com/"], :root a[href^="http://deskfrontfreely.com/"], :root [data-advadstrackid], :root a[href^="http://muzzlematrix.com/"], :root a[href^="https://track.adform.net/"], :root a[href^="http://avthelkp.net/"], :root a[href^="https://a.medfoodhome.com/"], :root a[href^="https://engine.flixtrial.com/"], :root [data-type="ad-vertical"], :root [data-taboola-options], :root a[href^="http://annulmentequitycereals.com/"], :root a[href^="//startgaming.net/tienda/" i], :root a[href^="https://www.get-express-vpn.com/offer/"], :root a[href^="https://s.cant3am.com/"], :root a[href^="//s.st1net.com/splash.php"], :root a[href^="https://join.virtualtaboo.com/track/"], :root [id^="ad_sky"], :root a[href^="http://coefficienttolerategravel.com/"], :root a[href^="https://a.medfoodsafety.com/"], :root a[href^="//go.eabids.com/"], :root a[href^="//ejitsirdosha.net/"], :root a[href^=" https://www.friendlyduck.com/AF_"], :root a[href*="/jump/next.php?r="], :root [href^="https://ilovemyfreedoms.com/landing-"], :root a[href^="https://go.nordvpn.net/aff"] > img, :root .\[\&_\.gdprAdTransparencyCogWheelButton\]\:\!pjra-z-\[5\], :root [href^="http://clicks.totemcash.com/"], :root a[href^="https://ad.zanox.com/ppc/"] > img, :root a[href^="https://lone-pack.com/"], :root [data-d-ad-id], :root a[href*=".engine.adglare.net/"], :root a[href^="https://t.ajrkm3.com/"], :root a[href^="//stighoazon.com/"], :root [href^="https://www.profitablegatecpm.com/"], :root div[id^="lazyad-"], :root a[href^="http://com-1.pro/"], :root a[href*=".cfm?domain="][href*="&fp="], :root [data-ad-name], :root a[href^="https://loboclick.com/"], :root a[data-url^="https://vulpix.bet/?ref="], :root a[href^="https://ab.advertiserurl.com/aff/"], :root a[data-oburl^="https://paid.outbrain.com/network/redir?"], :root a[href^="https://go.xlivrdr.com"], :root [onclick^="location.href='https://1337x.vpnonly.site/"], :root [name^="google_ads_iframe"], :root [id^="section-ad-banner"], :root [href^="https://zone.gotrackier.com/"], :root a[href^="http://sarcasmadvisor.com/"], :root [href^="https://www.restoro.com/"], :root [href^="https://www.targetingpartner.com/"], :root div[class^="Adstyled__AdWrapper-"], :root a[href^="https://startgaming.net/tienda/" i], :root .section-subheader > .section-hotel-prices-header, :root [href^="https://www.hostg.xyz/"] > img, :root a[href^="http://adultfriendfinder.com/go/"], :root a[href^="https://fastestvpn.com/lifetime-special-deal?a_aid="], :root a[href^="https://tour.mrskin.com/"], :root [href^="https://www.brighteonstore.com/products/"] img, :root citrus-ad-wrapper, :root a[onmousedown^="this.href='https://paid.outbrain.com/network/redir?"][target="_blank"], :root a[href^="https://go.grinsbest.com/"], :root a[href^="https://vo2.qrlsx.com/"], :root [href^="https://www.avantlink.com/click.php"] img, :root a[href^="https://losingoldfry.com/"], :root [href^="https://routewebtk.com/"], :root div[id^="div-ads-"], :root [href^="https://rapidgator.net/article/premium/ref/"], :root [href^="https://join.girlsoutwest.com/"], :root a[href^="https://track.aftrk3.com/"], :root [href^="https://join3.bannedsextapes.com"], :root a[href^="https://bodelen.com/"], :root a[href*=".g2afse.com/"], :root div[id^="adngin-"], :root [data-rc-widget], :root span[data-ez-ph-id], :root [href^="https://track.aftrk1.com/"], :root [href^="https://join.playboyplus.com/track/"], :root a[href^="https://go.xxxijmp.com"], :root [href^="https://istlnkcl.com/"], :root [href^="https://go.xlrdr.com"], :root a[href^="https://tm-offers.gamingadult.com/"], :root [href^="https://charmingdatings.life/"], :root [href^="https://glersakr.com/"], :root a[href^="https://www.goldenfrog.com/vyprvpn?offer_id="][href*="&aff_id="], :root [id^="ad-wrap-"], :root a[href*="//jjgirls.com/sex/Chaturbate"], :root a[href^="https://a.bestcontentfood.top/"], :root [href^="https://cpa.10kfreesilver.com/"], :root [data-id^="div-gpt-ad"], :root a[href^="https://tracker.loropartners.com/"], :root [href^="https://awbbjmp.com/"], :root a[data-href^="http://ads.trafficjunky.net/"], :root a[href*=".adsrv.eacdn.com/"], :root [href^="https://antiagingbed.com/discount/"] > img, :root a[href^="http://partners.etoro.com/"], :root a[href^="https://www.friendlyduck.com/AF_"], :root [href^="https://ad1.adfarm1.adition.com/"], :root a[href^="https://bngprm.com/"], :root [href^="https://shiftnetwork.infusionsoft.com/go/"] > img, :root a[href^="https://go.strpjmp.com/"], :root a[href^="https://go.bushheel.com/"], :root a[href^="https://ctjdwm.com/"], :root a[href^="https://camfapr.com/landing/click/"], :root div[data-ad-wrapper], :root .gnt_em_vp_c[data-g-s="vp_dk"], :root [href="//sexcams.plus/"], :root [href^="http://www.mypillow.com/"] > img, :root #kt_player > a[target="_blank"], :root a[href^="http://bongacams.com/track?"], :root [href^="http://mypillow.com/"] > img, :root [href="https://ourgoldguy.com/contact/"] img, :root #teaser3[style="width: 100%;text-align: center;display: scroll;position:fixed;bottom: 0;margin: 0 auto;z-index: 103;"], :root [href="https://www.masstortfinancing.com/"] > img, :root a[href^="https://go.rmhfrtnd.com/"], :root [href="https://jdrucker.com/gold"] > img, :root a[href^="https://track.1234sd123.com/"], :root zeus-ad, :root [data-testid="prism-ad-wrapper"], :root [href^="https://ad.admitad.com/"], :root [href^="https://mypillow.com/"] > img, :root [data-testid="ad_testID"], :root [href^="https://optimizedelite.com/"] > img, :root [data-name="adaptiveConstructorAd"], :root a[href^="https://go.cmtaffiliates.com/"], :root [href^="https://mylead.global/stl/"] > img, :root [data-testid="adBanner-wrapper"], :root [href^="https://goldcometals.com/clk.trk"], :root [href^="https://mypatriotsupply.com/"] > img, :root a[href^="https://go.hpyjmp.com"], :root [href^="https://mystore.com/"] > img, :root [href^="https://wct.link/click?"], :root div[data-adunit], :root app-large-ad, :root [href^="https://turtlebids.irauctions.com/"] img, :root a[href^="https://witnessjacket.com/"], :root [data-mobile-ad-id], :root a[href^="https://fc.lc/ref/"], :root [data-adshim], :root topadblock, :root a[href^="//s.zlinkd.com/"], :root [class^="amp-ad-"], :root a[href^="http://handgripvegetationhols.com/"], :root a[href^="https://bs.serving-sys.com"], :root a[href^="https://gamingadlt.com/?offer="], :root [data-desktop-ad-id], :root a[href^="https://www.liquidfire.mobi/"], :root .grid > .container > #aside-promotion, :root DFP-AD, :root [id^="ad_slider"], :root [data-adbridg-ad-class], :root #teaser3[style^="width:autopx;"], :root [data-adblockkey], :root [data-block-type="ad"], :root [data-ad-width], :root [onclick*="content.ad/"], :root [data-ad-manager-id], :root AMP-AD, :root [data-ad-cls], :root [data-revive-zoneid] > iframe, :root [data-ez-name], :root a[href^="https://go.mnaspm.com/"], :root a[href^="https://service.bv-aff-trx.com/"], :root a[href^="https://6-partner.com/"], :root a[href^="https://traffdaq.com/"], :root [href^="https://www.cloudways.com/en/?id"], :root #teaser1[style^="width:autopx;"], :root [class^="div-gpt-ad"], :root a[href^="http://tc.tradetracker.net/"] > img, :root [href^="https://affiliate.fastcomet.com/"] > img, :root [class^="adDisplay-module"], :root [data-freestar-ad][id], :root [href^="https://v.investologic.co.uk/"], :root AD-SLOT, :root a[href^="https://www.googleadservices.com/pagead/aclk?"] > img, :root [data-ad-module], :root div[id^="div-gpt-"], :root a[href^="https://gml-grp.com/"], :root .ob_dual_right > .ob_ads_header ~ .odb_div, :root app-advertisement, :root a[href^="https://getmatchedlocally.com/"], :root a[href^="https://clickins.slixa.com/"], :root a[href^="https://cam4com.go2cloud.org/"], :root a[href^="http://li.blogtrottr.com/click?"], :root a[href^="https://go.skinstrip.net"][href*="?campaignId="], :root #teaser2[style^="width:autopx;"], :root a[href^="https://t.ajump1.com/"], :root a[href^="https://go.xxxjmp.com"], :root #leader-companion > a[href] { display: none !important; }</style><meta http-equiv="origin-trial" content="AlK2UR5SkAlj8jjdEc9p3F3xuFYlF6LYjAML3EOqw1g26eCwWPjdmecULvBH5MVPoqKYrOfPhYVL71xAXI1IBQoAAAB8eyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="Amm8/NmvvQfhwCib6I7ZsmUxiSCfOxWxHayJwyU1r3gRIItzr7bNQid6O8ZYaE1GSQTa69WwhPC9flq/oYkRBwsAAACCeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiV2ViVmlld1hSZXF1ZXN0ZWRXaXRoRGVwcmVjYXRpb24iLCJleHBpcnkiOjE3NTgwNjcxOTksImlzU3ViZG9tYWluIjp0cnVlfQ=="><meta http-equiv="origin-trial" content="A9uiHDzQFAhqALUhTgTYJcz9XrGH2y0/9AORwCSapUO/f7Uh7ysIzyszNkuWDLqNYg8446Uj48XIstBW1qv/wAQAAACNeyJvcmlnaW4iOiJodHRwczovL2RvdWJsZWNsaWNrLm5ldDo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><meta http-equiv="origin-trial" content="A9R+gkZL3TWq+Z7RJ2L0c7ZN7FZD5z4mHmVvjrPitg/EMz9P3j5d3W7Vw5ZR9jtJGmWKltM4BO3smNzpCgwYuwwAAACTeyJvcmlnaW4iOiJodHRwczovL2dvb2dsZXN5bmRpY2F0aW9uLmNvbTo0NDMiLCJmZWF0dXJlIjoiRmxlZGdlQmlkZGluZ0FuZEF1Y3Rpb25TZXJ2ZXIiLCJleHBpcnkiOjE3Mjc4MjcxOTksImlzU3ViZG9tYWluIjp0cnVlLCJpc1RoaXJkUGFydHkiOnRydWV9"><script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script><script src="https://imasdk.googleapis.com/js/sdkloader/outstream.js"></script></head>
+  <body aria-hidden="false" style=""><div id="ad-overlay" style="display:none;width:100%;height:100%;z-index:9999;position:absolute;">
+  <div id="ad-container" style="width:100%;height:100%;z-index:9999;position:absolute;"></div>
+</div>
+
+    <div id="unity-container" class="unity-desktop">
+      <canvas id="unity-canvas" width="960" height="600" style="width: 960px; height: 600px; cursor: default;"></canvas>
+      <div id="unity-loading-bar" style="display: none;">
+        <div id="unity-logo"></div>
+        <div id="unity-progress-bar-empty">
+          <div id="unity-progress-bar-full" style="width: 100%;"></div>
+        </div>
+      </div>
+      <div id="unity-mobile-warning">
+        WebGL builds are not supported on mobile devices.
+      </div>
+      <div id="unity-footer">
+        <div id="unity-webgl-logo"></div>
+        <div id="unity-fullscreen-button"></div>
+        <div id="unity-build-title">Slope</div>
+      </div>
+    </div>
+    <script>
+      var buildUrl = "Build";
+      var loaderUrl = buildUrl + "/SlopeBuild.loader.js";
+      var config = {
+        dataUrl: buildUrl + "/SlopeBuild.data.gz",
+        frameworkUrl: buildUrl + "/SlopeBuild.framework.js.gz",
+        codeUrl: buildUrl + "/SlopeBuild.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "Y8",
+        productName: "Slope",
+        productVersion: "1.2",
+      };
+
+      var container = document.querySelector("#unity-container");
+      var canvas = document.querySelector("#unity-canvas");
+      var loadingBar = document.querySelector("#unity-loading-bar");
+      var progressBarFull = document.querySelector("#unity-progress-bar-full");
+      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
+      var mobileWarning = document.querySelector("#unity-mobile-warning");
+
+      // By default Unity keeps WebGL canvas render target size matched with
+      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
+      // Set this to false if you want to decouple this synchronization from
+      // happening inside the engine, and you would instead like to size up
+      // the canvas DOM size and WebGL render target sizes yourself.
+      // config.matchWebGLToCanvasSize = false;
+
+      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
+        container.className = "unity-mobile";
+        // Avoid draining fillrate performance on mobile devices,
+        // and default/override low DPI mode on mobile browsers.
+        config.devicePixelRatio = 1;
+        mobileWarning.style.display = "block";
+        setTimeout(() => {
+          mobileWarning.style.display = "none";
+        }, 5000);
+      } else {
+        canvas.style.width = "960px";
+        canvas.style.height = "600px";
+      }
+      loadingBar.style.display = "block";
+	  var myGameInstance = null;
+      var script = document.createElement("script");
+      script.src = loaderUrl;
+      script.onload = () => {
+        createUnityInstance(canvas, config, (progress) => {
+          progressBarFull.style.width = 100 * progress + "%";
+        }).then((unityInstance) => {
+		  myGameInstance = unityInstance;
+          loadingBar.style.display = "none";
+          fullscreenButton.onclick = () => {
+            unityInstance.SetFullscreen(1);
+          };
+        }).catch((message) => {
+          alert(message);
+        });
+      };
+      document.body.appendChild(script);
+    </script><script src="Build/SlopeBuild.loader.js"></script>
+    <script async="" data-ad-client="ca-pub-6129580795478709" data-ad-channel="6347007127" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" data-checked-head="true">
+    </script>
+     <script type="text/javascript" src="js/gameBreakBeta.js"></script>
+  
+
+<script src="Build/SlopeBuild.framework.js.gz"></script><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important;"><div id="aswift_0_host" style="border: none; height: 0px; width: 0px; margin: 0px; padding: 0px; position: relative; visibility: visible; background-color: transparent; display: inline-block;"><iframe id="aswift_0" name="aswift_0" browsingtopics="true" style="left:0;position:absolute;top:0;border:0;width:undefinedpx;height:undefinedpx;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allow="attribution-reporting" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-6129580795478709&amp;output=html&amp;adk=1812271804&amp;adf=3279755397&amp;abgtt=3&amp;plaf=1%3A2%2C2%3A2%2C7%3A2&amp;plat=1%3A520%2C2%3A520%2C3%3A2163200%2C4%3A2163200%2C8%3A512%2C9%3A33288%2C16%3A8388608%2C17%3A32%2C24%3A32%2C25%3A32%2C26%3A512%2C27%3A512%2C30%3A1049088%2C32%3A32%2C41%3A32%2C42%3A32&amp;channel=6347007127&amp;format=0x0&amp;url=https%3A%2F%2Fwww.y8.com%2F&amp;pra=5&amp;wgl=1&amp;aihb=0&amp;asro=0&amp;ailel=1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aiael=1~2~4~6~7~8~9~10~11~12~13~14~15~16~17~18~19~20~21~24~29~30~34&amp;aifxl=29_18~30_19&amp;aiixl=29_5~30_6&amp;aslmct=0.7&amp;asamct=0.7&amp;aipecl=1&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTEyLjAuNTE5Ny43NCIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3QvQSlCcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTI2LjAuNjQ3OC4yMjYiXSxbIk9wZXJhIEdYIiwiMTEyLjAuNTE5Ny43NCJdXSwwXQ..&amp;dt=1727540223688&amp;bpp=4&amp;bdt=250&amp;idt=205&amp;shv=r20240925&amp;mjsv=m202409250101&amp;ptt=9&amp;saldr=aa&amp;cookie_enabled=1&amp;eoidce=1&amp;nras=1&amp;correlator=2918615048851&amp;frm=24&amp;ife=1&amp;pv=2&amp;nhd=1&amp;u_tz=-300&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=-12245933&amp;bih=-12245933&amp;isw=960&amp;ish=641&amp;ifk=2846567657&amp;scr_x=-12245933&amp;scr_y=-12245933&amp;eid=44759876%2C44759927%2C44759842%2C31087426%2C31087430%2C31087437%2C44795921%2C95341936%2C95342015%2C31087523%2C95335245&amp;oid=2&amp;pvsid=2610506071509975&amp;tmod=638511492&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1032%2C960%2C641&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=0&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=1&amp;uci=1.cpcy98o8rdh6&amp;fsb=1&amp;dtd=242" data-google-container-id="1.cpcy98o8rdh6" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins><iframe src="https://www.google.com/recaptcha/api2/aframe" width="0" height="0" style="display: none;"></iframe><div id="id-root" class="id-reset"></div><iframe name="easyXDM_id_xd_api_provider" title="easyXDM_id_xd_api_provider" id="easyXDM_id_xd_api_provider" src="https://cdn.y8.com/Xd/xd_handler.html?version=44&amp;xdm_e=https%3A%2F%2Fstorage.y8.com&amp;xdm_c=id_xd_api&amp;xdm_p=1" frameborder="0" style="position: absolute; top: -2000px; left: 0px;"></iframe></body><iframe id="google_esf" name="google_esf" src="https://googleads.g.doubleclick.net/pagead/html/r20240925/r20110914/zrt_lookup_fy2021.html" style="display: none;"></iframe><ins class="adsbygoogle adsbygoogle-noablate" data-adsbygoogle-status="done" style="display: none !important; width: 100vw !important; height: 100vh !important; inset: 0px auto auto 0px !important; clear: none !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; position: fixed !important; vertical-align: baseline !important; visibility: visible !important; z-index: 2147483647 !important; background: transparent !important;" aria-hidden="true" data-slotcar-rewarded="true"><div id="aswift_2_host" style="border: none !important; height: 100vh !important; width: 100vw !important; margin: 0px !important; padding: 0px !important; position: relative !important; visibility: visible !important; background-color: transparent !important; display: inline-block !important; inset: auto !important; clear: none !important; float: none !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; vertical-align: baseline !important; z-index: auto !important;"><iframe id="aswift_2" name="aswift_2" browsingtopics="true" style="inset: 0px auto auto 0px !important; position: absolute !important; border: 0px !important; width: 100vw !important; height: 100vh !important; clear: none !important; display: inline !important; float: none !important; margin: 0px !important; max-height: none !important; max-width: none !important; opacity: 1 !important; overflow: visible !important; padding: 0px !important; vertical-align: baseline !important; visibility: visible !important; z-index: auto !important;" sandbox="allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation" allow="autoplay; attribution-reporting" width="" height="" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" src="https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;client=ca-pub-6129580795478709&amp;output=html&amp;h=641&amp;adk=3153568354&amp;adf=1300378861&amp;w=960&amp;abgtt=3&amp;vpmute=0&amp;to=gsc&amp;channel=6347007127&amp;format=960x641&amp;url=https%3A%2F%2Fwww.y8.com%2F&amp;pra=3&amp;wgl=1&amp;fa=11&amp;uach=WyJXaW5kb3dzIiwiMTUuMC4wIiwieDg2IiwiIiwiMTEyLjAuNTE5Ny43NCIsbnVsbCwwLG51bGwsIjY0IixbWyJOb3QvQSlCcmFuZCIsIjguMC4wLjAiXSxbIkNocm9taXVtIiwiMTI2LjAuNjQ3OC4yMjYiXSxbIk9wZXJhIEdYIiwiMTEyLjAuNTE5Ny43NCJdXSwwXQ..&amp;dt=1727540224247&amp;bpp=1&amp;bdt=808&amp;idt=0&amp;shv=r20240925&amp;mjsv=m202409250101&amp;ptt=9&amp;saldr=aa&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0%2C960x641&amp;nras=3&amp;correlator=2918615048851&amp;pv_ch=6347007127%2B&amp;frm=24&amp;ife=1&amp;pv=1&amp;nhd=1&amp;u_tz=-300&amp;u_his=2&amp;u_h=1080&amp;u_w=1920&amp;u_ah=1032&amp;u_aw=1920&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=-12245933&amp;ady=-12245933&amp;biw=-12245933&amp;bih=-12245933&amp;isw=960&amp;ish=641&amp;ifk=2846567657&amp;scr_x=-12245933&amp;scr_y=-12245933&amp;eid=44759876%2C44759927%2C44759842%2C31087426%2C31087430%2C31087437%2C44795921%2C95341936%2C95342015%2C31087523%2C95335245&amp;oid=2&amp;pvsid=2610506071509975&amp;tmod=638511492&amp;uas=0&amp;nvt=1&amp;fsapi=1&amp;brdim=0%2C0%2C0%2C0%2C1920%2C0%2C1920%2C1032%2C960%2C641&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=0&amp;bc=31&amp;bz=1&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=3.l5s5m81d7nvt&amp;fsb=1&amp;dtd=2" data-google-container-id="3.l5s5m81d7nvt" tabindex="0" title="Advertisement" aria-label="Advertisement" data-load-complete="true"></iframe></div></ins></html>
